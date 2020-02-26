@@ -12,7 +12,6 @@
 
 ActiveRecord::Schema.define(version: 2020_02_26_143814) do
 
-
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -136,6 +135,6 @@ ActiveRecord::Schema.define(version: 2020_02_26_143814) do
   add_foreign_key "answers", "users"
   add_foreign_key "invitations", "users", column: "receiver_id"
   add_foreign_key "invitations", "users", column: "sender_id"
-  add_foreign_key "users", "profile_mbtis"
   add_foreign_key "taggings", "tags"
+  add_foreign_key "users", "profile_mbtis"
 end
