@@ -1,0 +1,7 @@
+<!-- Cloudinary - Ajouter le crop avec déterction du visage -->
+<%= cl_image_tag @profile.photo.key, height: 300, width: 400, crop: :fill %>
+<!-- Afficher les tags d'activités -->
+<p><% @profile.tag_list.each do |tag| %>
+  <%= tag %>
+<% end %></p>
+
