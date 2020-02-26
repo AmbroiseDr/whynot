@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'pages#home'
+  root to: 'matches#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  resource :profile, only: [:show, :edit, :update]
+  resources :matches, only: [:index , :show]
+
+  # resources :invitations, only: [ :new, :create, :show, :index, :destroy ]
+  resources :questions, only: [:show ] do
+      resources :answers, only: [ :create ]
+  end
 end

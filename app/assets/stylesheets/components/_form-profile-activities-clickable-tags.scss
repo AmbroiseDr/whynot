@@ -1,0 +1,38 @@
+.clickable {
+  padding: 40px;
+  width: 180px;
+  border: 1px solid #FB5607;
+  color: #A0A0A0;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+
+.clickable:hover i {
+  color: #FB5607;
+}
+.clickable.active {
+  color: inherit;
+  border-color: inherit;
+}
+.clickable.active i {
+  color: #FB5607;
+}
+
+.clickable i {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.index i {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.index small {
+  font-size: 12px;
+}
