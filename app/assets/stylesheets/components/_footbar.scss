@@ -18,7 +18,8 @@
   text-decoration: none;
   font-size: 24px;
 
-  &.active{
+  &:hover{
     opacity:1;
+    color: #FB5607;
   }
 }
