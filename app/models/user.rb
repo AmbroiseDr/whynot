@@ -6,4 +6,5 @@ class User < ApplicationRecord
   has_many :answers
   has_many :questions, through: :answers
   belongs_to :profile_mbti
+  has_one_attached :photo
 end
