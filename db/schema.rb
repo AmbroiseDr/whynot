@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_26_093624) do
+ActiveRecord::Schema.define(version: 2020_02_26_102624) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,13 @@ ActiveRecord::Schema.define(version: 2020_02_26_093624) do
     t.index ["sender_id"], name: "index_invitations_on_sender_id"
   end
 
+  create_table "profile_mbtis", force: :cascade do |t|
+    t.string "mbti"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "questions", force: :cascade do |t|
     t.string "content"
     t.integer "minimum"
@@ -62,7 +69,6 @@ ActiveRecord::Schema.define(version: 2020_02_26_093624) do
     t.text "description"
     t.string "job"
     t.integer "age"
-    t.string "mbti_creation"
     t.integer "letter_adjustement_first"
     t.integer "letter_adjustement_second"
     t.integer "letter_adjustement_third"
@@ -71,7 +77,9 @@ ActiveRecord::Schema.define(version: 2020_02_26_093624) do
     t.string "movie"
     t.string "song"
     t.string "smiley"
+    t.bigint "profile_mbti_id"
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["profile_mbti_id"], name: "index_users_on_profile_mbti_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
@@ -79,4 +87,5 @@ ActiveRecord::Schema.define(version: 2020_02_26_093624) do
   add_foreign_key "answers", "users"
   add_foreign_key "invitations", "users", column: "receiver_id"
   add_foreign_key "invitations", "users", column: "sender_id"
+  add_foreign_key "users", "profile_mbtis"
 end
