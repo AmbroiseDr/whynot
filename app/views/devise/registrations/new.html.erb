@@ -20,7 +20,7 @@
                 input_html: { autocomplete: "new-password" } %>
     <%= f.input :profile_mbti_id,
                 required: true,
-                collection: ProfileMbti.all %>
+                collection: ProfileMbti.pluck(:mbti, :id) %>
 
   </div>
 
