@@ -1,0 +1,31 @@
+.description-header {
+  font-style: normal;
+  display: flex;
+  justify-content: space-around;
+}
+
+hr {
+  border-color: #FB5607;
+  opacity: 0.5
+}
+
+.fa-user{
+  color: #FB5607;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+}
+
+.user-description p{
+  text-align: center;
+  margin: 5px 15px
+}
+
+.pref {
+  .fas{
+    color: #FB5607;
+    font-size: 16px;
+  }
+  display: flex;
+  justify-content: flex-start;
+}

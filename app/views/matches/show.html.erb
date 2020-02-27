@@ -1,2 +1,29 @@
-<h1> @user.email</h1>
-<p> Display the show of a match</p>
+<% user = User.find(11) %>
+
+<div class="container">
+  <div class="d-flex flex-column">
+    <%= cl_image_tag user.photo.key, id:"profile-picture", class:"m-3", crop: :thumb %>
+    <div class="description-header">
+      <h5> <%= user.name.capitalize %></h5>
+      <h6>24<%= user.age %>ANS</h6>
+    </div>
+    <div class="user-description">
+      <hr class="ml-3 mr-3 mt-1 mb-1">
+      <i class="far fa-user"></i>
+      <p>Penseur, imaginatif et stratège avec un plan pour tout !<%=user.description%></p>
+      <hr class="ml-3 mr-3 mt-1 mb-1">
+    </div>
+    <div class="user-preferences m-2">
+      <div class="pref">
+        <i class="fas fa-suitcase mr-3 ml-2"></i>
+        <p>Investment annalyst<%=user.job%></p>
+      </div>
+      <div class="pref">
+      <i class="fas fa-video mr-3 ml-2"></i>
+      <p>Kill Bill 2<%= user.movie %></p>
+      </div>
+    </div>
+    <h5>Mes activités</h5>
+    <p>  <%= user.tag_list%> </p>
+  </div>
+</div>
