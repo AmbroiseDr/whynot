@@ -1,13 +1,17 @@
 const clickTags = () => {
-  const tags = document.getElementById('user_tags')
+  const tags = document.getElementById('user_form_tag_list')
 
   if (tags) {
     const icons = document.querySelectorAll(".clickable");
+
+    console.log("hello")
 
     icons.forEach((icon) => {
       icon.addEventListener('click', (event) => {
         tags.value += icon.dataset.value + ',';
         icon.classList.toggle("active")
+
+        console.log(user_form_tag_list.value)
       });
     });
 
