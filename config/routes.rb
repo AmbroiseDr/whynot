@@ -11,5 +11,5 @@ Rails.application.routes.draw do
       resources :answers, only: [ :create ]
   end
 
-  resources :map, only: :show;
+  resources :maps, only: [:index]
 end
