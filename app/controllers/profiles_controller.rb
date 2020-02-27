@@ -38,6 +38,6 @@ class ProfilesController < ApplicationController
   private
 
   def profile_params
-    params.require(:user).permit(:photo, :form_tag_list, :movie_title, :movie_year, :movie_image_url, :description)
+    params.require(:user).permit(:photo, :form_tag_list, :movie_title, :movie_year, :movie_image_url, :description, :job)
   end
 end
