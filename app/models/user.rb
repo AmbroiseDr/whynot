@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  attr_accessor :form_tags
+  attr_accessor :form_tag_list
   acts_as_taggable
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable

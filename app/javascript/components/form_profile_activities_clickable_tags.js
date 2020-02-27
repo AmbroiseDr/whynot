@@ -1,5 +1,5 @@
 const clickTags = () => {
-  const tags = document.getElementById('user_tags')
+  const tags = document.getElementById('user_form_tag_list')
 
   if (tags) {
     const icons = document.querySelectorAll(".clickable");
