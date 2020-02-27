@@ -10,4 +10,6 @@ Rails.application.routes.draw do
   resources :questions, only: [:show ] do
       resources :answers, only: [ :create ]
   end
+
+  resources :map, only: :show;
 end
