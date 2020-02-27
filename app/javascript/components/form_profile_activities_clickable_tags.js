@@ -4,14 +4,10 @@ const clickTags = () => {
   if (tags) {
     const icons = document.querySelectorAll(".clickable");
 
-    console.log("hello")
-
     icons.forEach((icon) => {
       icon.addEventListener('click', (event) => {
         tags.value += icon.dataset.value + ',';
         icon.classList.toggle("active")
-
-        console.log(user_form_tag_list.value)
       });
     });
 
