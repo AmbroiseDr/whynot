@@ -1,5 +1,7 @@
 <div class="footer">
-    <a href="#" class="footbar-btn"><i class="far fa-user"></i></i></a>
+    <%= link_to profile_path, class:"footbar-btn" do %>
+      <i class="far fa-user"></i>
+    <% end %>
     <%= link_to matches_path, class:"footbar-btn" do %>
       <i class="fas fa-home"></i>
     <% end %>
