@@ -1,8 +1,32 @@
 <!-- Cloudinary - Ajouter le crop avec déterction du visage -->
 <!-- Afficher les tags d'activités -->
 <div class="container">
-  <p>  <%= @profile.tag_list%> </p>
-  <%= cl_image_tag @profile.photo.key %>
+  <div class="d-flex flex-column">
+    <%= cl_image_tag current_user.photo.key, id:"profile-picture", class:"m-3", crop: :thumb %>
+    <div class="description-header">
+      <h5> <%= current_user.name.capitalize %></h5>
+      <h6>24<%= current_user.age %>ANS</h6>
+    </div>
+    <div class="user-description">
+      <hr class="ml-3 mr-3 mt-1 mb-1">
+      <i class="far fa-user"></i>
+      <p><%=current_user.profile_mbti.description%></p>
+      <hr class="ml-3 mr-3 mt-1 mb-1">
+    </div>
+    <div class="user-preferences m-2">
+      <div class="pref">
+        <i class="fas fa-suitcase mr-3 ml-2"></i>
+        <p>Investment annalyst<%=current_user.job%></p>
+      </div>
+      <div class="pref">
+      <i class="fas fa-video mr-3 ml-2"></i>
+      <p>Kill Bill 2<%= current_user.movie %></p>
+      </div>
+    </div>
+    <h5 id="act">Mes activités</h5>
+    <hr class="ml-3 mr-3 mb-1">
+    <p>  <%= current_user.tag_list%> </p>
+  </div>
 </div>
 
 
