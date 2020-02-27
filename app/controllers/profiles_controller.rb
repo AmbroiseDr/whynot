@@ -31,13 +31,13 @@ class ProfilesController < ApplicationController
       current_user.tag_list.add(tag)
     end
     current_user.photo = profile_params[:photo]
-    current_user.save
+    current_user.update(profile_params)
     redirect_to profile_path
   end
 
   private
 
   def profile_params
-    params.require(:user).permit(:photo, :form_tag_list)
+    params.require(:user).permit(:photo, :form_tag_list, :movie_title, :movie_year, :movie_image_url, :description)
   end
 end

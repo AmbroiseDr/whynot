@@ -1,14 +1,38 @@
-<h1>Edit profile</h1>
-
-
-<%= simple_form_for(@profile, url: profile_path, method: :patch) do |f| %>
-      <%= f.input :photo, as: :file %>
+<div class="container">
+  <%= simple_form_for(@profile, url: profile_path, method: :patch) do |f| %>
+    <div class="edit-image">
+      <h2>Votre photo</h2>
+      <%= f.input :photo, as: :file, label: false  %>
+    </div>
+    <div class="profile-mbti">
+      <i class="fas fa-user"></i>
+      <%= current_user.profile_mbti.description %>
+    </div>
+    <h2>Métier</h2>
+    <%= f.input :job, input_html: { maxlength: 50 }, label: false  %>
+    <h2>Description</h2>
+    <%= f.input :description, input_html: { maxlength: 50 }, label: false %>
+      <h2>Votre film préféré</h2>
       <%= render "search_movie" %>
-      <%= f.input :movie %>
-      <%= render "tags" %>
-      <%= f.input :form_tag_list %>
-      <%#= f.input :tags, wrapper_html: {class: "d-none"}, input_html: {id:"tag",value: t.object.tag_list.join(",")} %>
-      <%= f.button :submit, class: "btn btn-warning text-center p-3" %>
-<% end %>
-
-
+      <% if current_user.movie_title != nil %>
+        <div class="selection d-flex">
+            <img src='<%= current_user.movie_image_url %>'>
+            <div>
+              <div class='card-title'>
+                <%= current_user.movie_title %>
+              </div>
+              <div class='card-text'>
+                <%= current_user.movie_year %>
+              </div>
+            </div>
+        </div>
+      <% end %>
+      <%= f.input :movie_title, wrapper_html: {class: "d-none"}  %>
+      <%= f.input :movie_year, wrapper_html: {class: "d-none"}  %>
+      <%= f.input :movie_image_url, wrapper_html: {class: "d-none"}  %>
+    </div>
+    <%= render "tags" %>
+    <%= f.input :form_tag_list, wrapper_html: {class: "d-none"} %>
+    <%= f.button :submit, class: "btn btn-warning text-center p-3 mb-5" %>
+  <% end %>
+</div>

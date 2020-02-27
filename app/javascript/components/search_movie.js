@@ -51,22 +51,41 @@ const searchMovie = () => {
         onSelection: feedback => {
           const selection = feedback.selection.value;
           // Render selected choice to selection div
-          document.querySelector(".selection").innerHTML = `<img src='${selection.Poster}'>
-          <div>
-            <div class='card-title'>
-              ${selection.Title}
-            </div>
-            <div class='card-text'>
-              ${selection.Year}
-            </div>
-          </div>`;
+          const pastMovie = document.querySelector('.selection')
+          if (pastMovie) {
+            document.querySelector(".selection").innerHTML =`
+              <img src='${selection.Poster}'>
+              <div>
+                <div class='card-title'>
+                  ${selection.Title}
+                </div>
+                <div class='card-text'>
+                  ${selection.Year}
+                </div>
+              </div>`;
+          } else {
+              document.getElementById("search-movie").insertAdjacentHTML("afterend",`
+              <div class='selection d-flex'>
+                <img src='${selection.Poster}'>
+                <div>
+                  <div class='card-title'>
+                    ${selection.Title}
+                  </div>
+                  <div class='card-text'>
+                    ${selection.Year}
+                  </div>
+                </div>
+              </div>`)
+          }
           // Clear Input
           document.querySelector("#autoComplete").value = "";
           // Change placeholder with the selected value
           document
             .querySelector("#autoComplete")
             .setAttribute("placeholder", selection.Title);
-          // Concole log autoComplete data feedback
+          document.querySelector('#user_movie_title').value = selection.Title
+          document.querySelector('#user_movie_year').value = selection.Year
+          document.querySelector('#user_movie_image_url').value = selection.Poster
         }
     });
   }
