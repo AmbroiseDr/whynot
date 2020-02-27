@@ -2,6 +2,7 @@
 class ProfilesController < ApplicationController
 
   def show
+    @profile = current_user
   end
 
   def edit
@@ -24,10 +25,12 @@ class ProfilesController < ApplicationController
   end
 
   def update
+    current_user.tag_list = []
     tags = profile_params[:form_tag_list].split(",")
     tags = count_tags(tags).each do |tag|
       current_user.tag_list.add(tag)
     end
+    current_user.photo = profile_params[:photo]
     current_user.save
     redirect_to profile_path
   end

@@ -1,3 +1,14 @@
-<h1>Hello</h1>
-<%= render "form", profile: @profile %>
-<%#= render "search_movie" %>
+<h1>Edit profile</h1>
+
+
+<%= simple_form_for(@profile, url: profile_path, method: :patch) do |f| %>
+      <%= f.input :photo, as: :file %>
+      <%= render "search_movie" %>
+      <%= f.input :movie %>
+      <%= render "tags" %>
+      <%= f.input :form_tag_list %>
+      <%#= f.input :tags, wrapper_html: {class: "d-none"}, input_html: {id:"tag",value: t.object.tag_list.join(",")} %>
+      <%= f.button :submit, class: "btn btn-warning text-center p-3" %>
+<% end %>
+
+
