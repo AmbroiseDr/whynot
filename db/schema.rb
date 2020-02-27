@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_26_143814) do
+ActiveRecord::Schema.define(version: 2020_02_27_160612) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -121,10 +121,12 @@ ActiveRecord::Schema.define(version: 2020_02_26_143814) do
     t.integer "letter_adjustement_third"
     t.integer "letter_adjustement_fourth"
     t.string "sex"
-    t.string "movie"
     t.string "song"
     t.string "smiley"
     t.bigint "profile_mbti_id"
+    t.string "movie_title"
+    t.integer "movie_year"
+    t.string "movie_image_url"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["profile_mbti_id"], name: "index_users_on_profile_mbti_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
