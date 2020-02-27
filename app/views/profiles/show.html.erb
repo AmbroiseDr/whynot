@@ -1,5 +1,8 @@
 <!-- Cloudinary - Ajouter le crop avec déterction du visage -->
 <!-- Afficher les tags d'activités -->
+<div class="container">
+  <p>  <%= @profile.tag_list%> </p>
+  <%= cl_image_tag @profile.photo.key %>
+</div>
 
-<%= current_user.tag_list%>
 

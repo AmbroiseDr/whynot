@@ -1,7 +1,14 @@
-<h1>Mofifiez votre profil</h1>
+<h1>Edit profile</h1>
 
-<h2>Votre film préféré</h2>
-<%= render "search_movie" %>
-<%= render "form", profile: @profile %>
+
+<%= simple_form_for(@profile, url: profile_path, method: :patch) do |f| %>
+      <%= f.input :photo, as: :file %>
+      <%= render "search_movie" %>
+      <%= f.input :movie %>
+      <%= render "tags" %>
+      <%= f.input :form_tag_list %>
+      <%#= f.input :tags, wrapper_html: {class: "d-none"}, input_html: {id:"tag",value: t.object.tag_list.join(",")} %>
+      <%= f.button :submit, class: "btn btn-warning text-center p-3" %>
+<% end %>
 
 
