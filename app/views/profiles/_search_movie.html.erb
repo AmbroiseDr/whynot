@@ -1,3 +1,5 @@
 
-
-<input id="search-movie" data-omdb="<%= ENV['OMDB_API_KEY'] %>" type="text">
+<div id="search-movie" class="d-flex align-items-center flex-column">
+<input id="autoComplete" data-omdb="<%= ENV['OMDB_API_KEY'] %>" type="text">
+</div>
+<div class="selection d-flex"></div>
