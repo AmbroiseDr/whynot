@@ -46,35 +46,35 @@ Question.create(content: "Une semaine sans voir des amis, c'est possible ?", typ
 
 puts "Questions created"
 
-user = User.new(email:"dan@edhec.com", password: "azerty" , name: "Dan", description:"Jovial et amical", job:"Etudiant à l'Edhec", age:23, sex: "M", movie: "L'odyssée de l'Espace - Kubrick", song:"Feeling good - Nina Simone")
+user = User.new(email:"dan@edhec.com", password: "azerty" , name: "Dan", description:"Jovial et amical", job:"Etudiant à l'Edhec", age:23, sex: "M", song:"Feeling good - Nina Simone")
 user.profile_mbti = ProfileMbti.where(mbti: "ENTP").take
 user.save
 
-user = User.new(email:"ambroise@edhec.com", password: "azerty", name: "Ambroise", description:"Sympa et exigeant", job:"Investment Analyst chez Xange", age:23, sex: "M", movie: "Usual Suspects", song:"Let it be - Beatles")
+user = User.new(email:"ambroise@edhec.com", password: "azerty", name: "Ambroise", description:"Sympa et exigeant", job:"Investment Analyst chez Xange", age:23, sex: "M", song:"Let it be - Beatles")
 user.profile_mbti = ProfileMbti.where(mbti: "ENTJ").take
 user.save
 
-user = User.new(email:"pauline@gm.com",password: "azerty",  name: "Pauline", description:"Entrepreneure", job:"Startuppeuse chez Le Wagon", age:23, sex: "F", movie: "Pirates des caraibes", song:"Hurricane - Bob Dylan")
+user = User.new(email:"pauline@gm.com",password: "azerty",  name: "Pauline", description:"Entrepreneure", job:"Startuppeuse chez Le Wagon", age:23, sex: "F", song:"Hurricane - Bob Dylan")
 user.profile_mbti = ProfileMbti.where(mbti: "ISFJ").take
 user.save
 
-user = User.new(email:"syb@edhec.com", password: "azerty", name: "Sybille", description:"Ecologiste et philanthrope", job:"Humanitaire chez Oxfam", age:23, sex: "F", movie: "Men in Black", song:"Zazie")
+user = User.new(email:"syb@edhec.com", password: "azerty", name: "Sybille", description:"Ecologiste et philanthrope", job:"Humanitaire chez Oxfam", age:23, sex: "F", song:"Zazie")
 user.profile_mbti = ProfileMbti.where(mbti: "INFJ").take
 user.save
 
-user = User.new(email:"gae@live.com", password: "azerty", name: "Gaetan", description:"Artiste et curieux", job:"Freelance en Web", age:23, sex: "M", movie: "Rick et Morty", song:"B2OBA - Booba")
+user = User.new(email:"gae@live.com", password: "azerty", name: "Gaetan", description:"Artiste et curieux", job:"Freelance en Web", age:23, sex: "M", song:"B2OBA - Booba")
 user.profile_mbti = ProfileMbti.where(mbti: "ESFJ").take
 user.save
 
-user = User.new(email:"whynot@edc.com", password: "azerty", name: "Tom", description:"Passionné de Football", job:"Educateur sportif au lycée Faidherbe", age:23, sex: "M", movie: "Zizou - les meilleurs buts", song:"Zidane il va marquer")
+user = User.new(email:"whynot@edc.com", password: "azerty", name: "Tom", description:"Passionné de Football", job:"Educateur sportif au lycée Faidherbe", age:23, sex: "M", song:"Zidane il va marquer")
 user.profile_mbti = ProfileMbti.where(mbti: "ESFP").take
 user.save
 
-user = User.new(email:"okkk@edhec.com", password: "azerty", name: "Rose", description:"Cuisine et voyages !", job:"Controleuse de gestion chez Lactalis", age:25, sex: "F", movie: "Orange mécanique - Kubrick", song:"Kanye west")
+user = User.new(email:"okkk@edhec.com", password: "azerty", name: "Rose", description:"Cuisine et voyages !", job:"Controleuse de gestion chez Lactalis", age:25, sex: "F", song:"Kanye west")
 user.profile_mbti = ProfileMbti.where(mbti: "INTJ").take
 user.save
 
-user = User.new(email:"loulou@edhec.com", password: "azerty", name: "Louis", description:"Nature et découvertes", job:"Cascadeur chez TPMP production", age:28, sex: "M", movie: "Mission impossible 3", song:"YMCA")
+user = User.new(email:"loulou@edhec.com", password: "azerty", name: "Louis", description:"Nature et découvertes", job:"Cascadeur chez TPMP production", age:28, sex: "M", song:"YMCA")
 user.profile_mbti = ProfileMbti.where(mbti: "ESTP").take
 user.save
 

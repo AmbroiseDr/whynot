@@ -6,4 +6,7 @@ class MatchesController < ApplicationController
   def show
     @user = current_user
   end
+
+  def find_matches
+  end
 end
