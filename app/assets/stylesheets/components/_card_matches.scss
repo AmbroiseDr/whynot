@@ -1,18 +1,45 @@
 .card-matches{
   text-align: center;
-  border: 1px solid rgba(251, 86, 7, 0.5);
+  background-color: rgba(251, 86, 7, 0.2);
   padding:0;
   border-radius:8px;
   width:40vw;
   margin: 0 auto;
+  position:relative;
+  height: 30vh;
+  border-bottom: 0 none;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.46);
 }
 
 .first-name-matches{;
-  font-weight: lighter;
+  font-weight: 400;
   font-size: 24px;
   line-height: 29px;
   align-items: center;
   text-align: center;
+}
+
+.age-matches{
+  font-weight: lighter;
+  font-size: 13px;
+}
+
+.description-matches{
+  font-weight: lighter;
+  font-size:14px;
+}
+
+.percentage-matches{
+  font-size:14px;
+  font-weight:600;
+}
+
+.distance-matches{
+  font-size:10px;
+  font-weight:lighter;
+  position:absolute;
+  right:10px;
+  bottom:10px;
 }
 
 .cards-matches{
