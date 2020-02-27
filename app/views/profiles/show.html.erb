@@ -2,10 +2,17 @@
 <!-- Afficher les tags d'activités -->
 <div class="container">
   <div class="d-flex flex-column">
-    <%= cl_image_tag current_user.photo.key, id:"profile-picture", class:"m-3", crop: :thumb %>
+    <%if current_user.photo.attached? %>
+      <%= cl_image_tag current_user.photo.key, id:"profile-picture", class:"m-3", crop: :thumb %>
+      <% else %>
+      <i class="fas fa-user-edit"></i>
+    <% end %>
     <div class="description-header">
       <h5> <%= current_user.name.capitalize %></h5>
-      <h6>24<%= current_user.age %>ANS</h6>
+      <% if current_user.age.nil? %>
+        <% else %>
+        <h6><%= current_user.age %>ANS</h6>
+        <% end %>
     </div>
     <div class="user-description">
       <hr class="ml-3 mr-3 mt-1 mb-1">
@@ -15,17 +22,54 @@
     </div>
     <div class="user-preferences m-2">
       <div class="pref">
-        <i class="fas fa-suitcase mr-3 ml-2"></i>
-        <p>Investment annalyst<%=current_user.job%></p>
+        <% if current_user.job.nil? %>
+          <% else %>
+          <i class="fas fa-suitcase mr-3 ml-2"></i>
+          <p>Investment annalyst<%=current_user.job%></p>
+        <% end %>
       </div>
       <div class="pref">
-      <i class="fas fa-video mr-3 ml-2"></i>
-      <p>Kill Bill 2<%= current_user.movie %></p>
+        <% if current_user.job.nil? %>
+          <% else %>
+          <i class="fas fa-video mr-3 ml-2"></i>
+          <p><%= current_user.movie_title %></p>
+          <% end %>
       </div>
     </div>
-    <h5 id="act">Mes activités</h5>
-    <hr class="ml-3 mr-3 mb-1">
-    <p>  <%= current_user.tag_list%> </p>
+    <h5 id="act" class="ml-3">Mes activités</h5>
+    <hr class="ml-3 mr-3 mt-1 mb-1">
+    <% if current_user.tag_list.nil? %>
+      <% else %>
+      <%current_user.tag_list.each do |tag|%>
+        <div class="clickable">
+        <%if tag=="sport"  %>
+            <i class="fas fa-football-ball"></i>
+            <small>Sport</small>
+            <% elsif tag=="cooking"%>
+            <i class="fas fa-utensils"></i>
+            <small>Cours de cuisine</small>
+            <% elsif tag=="museum" %>
+            <i class="fas fa-paint-brush"></i>
+            <small>Exposition</small>
+            <% elsif tag=="music" %>
+            <i class="fas fa-music"></i>
+            <small>Concert</small>
+            <% elsif tag=="walk"%>
+            <i class="fas fa-tree"></i>
+            <small>Promenade</small>
+            <% elsif tag=="cofee" %>
+            <i class="fas fa-coffee"></i>
+            <small>Café</small>
+            <% elsif tag=="game"%>
+            <i class="fas fa-chess-knight"></i>
+            <small>Bar à jeux</small>
+            <% elsif tag=="escapes" %>
+            <i class="fas fa-search"></i>
+            <small>Escape game</small>
+        <% end %>
+        </div>
+      <% end %>
+    <% end %>
   </div>
 </div>
 
