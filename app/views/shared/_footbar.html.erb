@@ -8,5 +8,7 @@
     <%= link_to maps_path, class:"footbar-btn #{"active" if params[:controller] == 'maps'}" do %>
       <i class="fas fa-map-marker-alt"></i>
     <% end %>
-    <a href="#" class="footbar-btn"><i class="far fa-comment"></i></a>
+    <%= link_to messages_index_path, class:"footbar-btn #{"active" if params[:controller] == 'messages'}" do %>
+      <i class="far fa-comment">
+    <% end %>
 </div>

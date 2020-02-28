@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_27_160612) do
+ActiveRecord::Schema.define(version: 2020_02_28_141259) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,6 +60,16 @@ ActiveRecord::Schema.define(version: 2020_02_27_160612) do
     t.datetime "updated_at", null: false
     t.index ["receiver_id"], name: "index_invitations_on_receiver_id"
     t.index ["sender_id"], name: "index_invitations_on_sender_id"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.text "content"
+    t.bigint "sender_id"
+    t.bigint "receiver_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["receiver_id"], name: "index_messages_on_receiver_id"
+    t.index ["sender_id"], name: "index_messages_on_sender_id"
   end
 
   create_table "profile_mbtis", force: :cascade do |t|
@@ -137,6 +147,8 @@ ActiveRecord::Schema.define(version: 2020_02_27_160612) do
   add_foreign_key "answers", "users"
   add_foreign_key "invitations", "users", column: "receiver_id"
   add_foreign_key "invitations", "users", column: "sender_id"
+  add_foreign_key "messages", "users", column: "receiver_id"
+  add_foreign_key "messages", "users", column: "sender_id"
   add_foreign_key "taggings", "tags"
   add_foreign_key "users", "profile_mbtis"
 end
