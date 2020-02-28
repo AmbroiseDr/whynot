@@ -13,7 +13,8 @@
 
 
 .selection img {
-  width:120px
+  width:120px;
+  height: 120px;
 }
 
 .selection div {
@@ -27,15 +28,17 @@
 
 
 .edit-image {
-  height:280px;
-  background-color: #aa968a;
-  border-radius: 5px;
   margin: 10px 0 10px 0;
-  display : flex;
-  justify-content : start;
-  align-items: left;
-  flex-direction: column;
-  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  img {
+    position : relative;
+    opacity: 0.5;
+  }
+  .edit-image-content {
+    position : absolute;
+    padding: 10px;
+  }
 }
 
 #user_description {

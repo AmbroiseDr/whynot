@@ -7,3 +7,4 @@ clickTags();
 
 import { searchMovie } from '../components/search_movie';
 searchMovie();
+
