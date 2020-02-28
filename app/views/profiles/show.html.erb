@@ -3,7 +3,7 @@
 <div class="container">
   <div class="d-flex flex-column">
     <%if current_user.photo.attached? %>
-      <%= cl_image_tag current_user.photo.key, id:"profile-picture", class:"m-3", crop: :thumb %>
+      <%= cl_image_tag current_user.photo.key, id:"profile-picture", class:"m-3", crop: :thumb, gravity: :adv_faces %>
       <% else %>
       <i class="fas fa-user-edit"></i>
     <% end %>
