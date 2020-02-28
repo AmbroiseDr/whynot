@@ -51,8 +51,9 @@
       <h2>Les activités qui vous plaisent</h2>
       <%= render "tags" %>
       <%= f.input :form_tag_list, wrapper_html: {class: "d-none"} %>
-      <div class="d-flex justify-content-center">
-        <%= f.button :submit, "Mettre à jour", class: "btn btn-warning p-2 mb-5 w-50 rounded-pill" %>
+      <div class="d-flex justify-content-center flex-column align-items-center">
+        <%= f.button :submit, "Mettre à jour", class: "btn btn-warning p-2 w-50 rounded-pill" %>
+        <%= link_to "Annuler", profile_path %></h3>
       </div>
     <% end %>
   </div>
