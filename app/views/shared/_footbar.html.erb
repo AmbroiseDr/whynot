@@ -1,11 +1,11 @@
 <div class="footer">
-    <%= link_to profile_path, class:"footbar-btn" do %>
+    <%= link_to profile_path, class:"footbar-btn #{"active" if params[:controller] == 'profiles'}" do %>
       <i class="far fa-user"></i>
     <% end %>
-    <%= link_to matches_path, class:"footbar-btn" do %>
+    <%= link_to matches_path, class:"footbar-btn #{"active" if params[:controller] == 'matches'}" do %>
       <i class="fas fa-home"></i>
     <% end %>
-    <%= link_to maps_path, class:"footbar-btn" do %>
+    <%= link_to maps_path, class:"footbar-btn #{"active" if params[:controller] == 'maps'}" do %>
       <i class="fas fa-map-marker-alt"></i>
     <% end %>
     <a href="#" class="footbar-btn"><i class="far fa-comment"></i></a>
