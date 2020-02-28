@@ -75,7 +75,7 @@
     <% if @user == @match %>
       <%= link_to "Modifier", edit_profile_path, class:"btn btn-warning" %>
     <% else %>
-      <%= link_to "Contacter  👥", user_messages_path(user), class:"btn btn-warning" %>
+      <%= link_to "Contacter  👥", user_messages_path(user.id), class:"btn btn-warning" %>
     <% end %>
   </div>
 </div>
