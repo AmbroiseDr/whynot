@@ -1,7 +1,9 @@
 <div class="container">
   <div class="top-bar">
     <i class="fas fa-cog"></i>
-    <i class="fas fa-sync-alt"></i>
+    <%= link_to question_path(1) do%>
+      <i class="fas fa-sync-alt"></i>
+    <%end%>
   </div>
   <div class="cards-matches">
     <% @matches.each do |match| %>

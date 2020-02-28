@@ -1,0 +1,49 @@
+.question-card {
+  width: 80vw;
+  height: 65vh;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+  margin: 25% auto;
+  background-color: white;
+}
+
+.question-card .fa-question{
+    color: #FB5607;
+    font-size: 100px;
+    opacity: 0.6;
+    display: flex;
+    justify-content: center;
+  }
+
+.question-card p {
+    text-align: center;
+  }
+
+.question-card .answer-with-like{
+  display: flex;
+  justify-content: center;
+}
+
+.question-card .fa-thumbs-up {
+  font-size: 50px;
+  color: #FB5607;
+  opacity: 0.6;
+  padding: 16px;
+}
+
+.fa-thumbs-up:hover {
+    opacity: 1;
+  }
+
+.question-card .down {
+    transform: rotate(180deg);
+  }
+
+.question-card .fa-arrow-circle-right{
+  font-size: 25px;
+  color: #FB5607;
+  display: flex;
+  justify-content: center;
+}
+
+
