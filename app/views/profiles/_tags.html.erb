@@ -1,36 +1,35 @@
-<div class="row justify-content-center mb-2">
-  <div id = "tags" class="d-flex flex-wrap justify-content-center">
-    <div class="clickable" data-value="sport">
-      <i class="fas fa-football-ball"></i>
-      <small>Sport</small>
-    </div>
-    <div class="clickable" data-value="cooking">
-      <i class="fas fa-utensils"></i>
-      <small>Cours de cuisine</small>
-    </div>
-    <div class="clickable" data-value="museum">
-      <i class="fas fa-paint-brush"></i>
-      <small>Exposition</small>
-    </div>
-    <div class="clickable" data-value="music">
-      <i class="fas fa-music"></i>
-      <small>Concert</small>
-    </div>
-    <div class="clickable" data-value="walk">
-      <i class="fas fa-tree"></i>
-      <small>Promenade</small>
-    </div>
-    <div class="clickable" data-value="cofee">
-      <i class="fas fa-coffee"></i>
-      <small>Café</small>
-    </div>
-    <div class="clickable" data-value="game">
-      <i class="fas fa-chess-knight"></i>
-      <small>Bar à jeux</small>
-    </div>
-    <div class="clickable" data-value="escapes">
-      <i class="fas fa-search"></i>
-      <small>Escape game</small>
-    </div>
+
+<div class="cards-activities ml-5 mr-5 mt-2">
+  <div class="clickable" data-value="sport" data-tag-list="<%= current_user.tag_list %>">
+    <i class="fas fa-football-ball"></i>
+    <small>Sport</small>
+  </div>
+  <div class="clickable" data-value="cooking" data-tag-list="<%= current_user.tag_list %>">
+    <i class="fas fa-utensils"></i>
+    <small>Cours de cuisine</small>
+  </div>
+  <div class="clickable" data-value="museum" data-tag-list="<%= current_user.tag_list %>">
+    <i class="fas fa-paint-brush"></i>
+    <small>Exposition</small>
+  </div>
+  <div class="clickable" data-value="music" data-tag-list="<%= current_user.tag_list %>">
+    <i class="fas fa-music"></i>
+    <small>Concert</small>
+  </div>
+  <div class="clickable" data-value="walk" data-tag-list="<%= current_user.tag_list %>">
+    <i class="fas fa-tree"></i>
+    <small>Promenade</small>
+  </div>
+  <div class="clickable" data-value="cofee" data-tag-list="<%= current_user.tag_list %>">
+    <i class="fas fa-coffee"></i>
+    <small>Café</small>
+  </div>
+  <div class="clickable" data-value="game" data-tag-list="<%= current_user.tag_list %>">
+    <i class="fas fa-chess-knight"></i>
+    <small>Bar à jeux</small>
+  </div>
+  <div class="clickable" data-value="escapes" data-tag-list="<%= current_user.tag_list %>">
+    <i class="fas fa-search"></i>
+    <small>Escape game</small>
   </div>
 </div>
