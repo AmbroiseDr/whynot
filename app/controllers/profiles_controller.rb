@@ -32,6 +32,7 @@ class ProfilesController < ApplicationController
     end
     current_user.photo = profile_params[:photo] unless profile_params[:photo].nil?
     current_user.update(profile_params)
+    raise
     redirect_to profile_path
   end
 
