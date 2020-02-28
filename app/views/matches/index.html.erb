@@ -1,4 +1,4 @@
-<div class="container m-0 p-0">
+<div class="container">
   <div class="top-bar">
     <i class="fas fa-cog"></i>
     <%= link_to question_path(1) do%>
@@ -6,9 +6,11 @@
     <%end%>
   </div>
   <div class="cards-matches">
-      <%= render 'shared/card' %>
-      <%= render 'shared/card' %>
-      <%= render 'shared/card' %>
-      <%= render 'shared/card' %>
+    <% @matches.each do |match| %>
+      <%= link_to match_path(match) do %>
+       <%= render partial: "shared/card", locals:{match: match} %>
+      <% end %>
+    <%end %>
   </div>
 </div>
+

@@ -13,10 +13,10 @@
   position:relative;
   height: 30vh;
   border-bottom: 0 none;
+  text-decoration:none;
+  color:black;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.46);
   background: -webkit-gradient(linear, bottom left, right top, color-stop(var(--percentage-match),var(--color-match)), color-stop(var(--percentage-match),white));
-    //background: -moz-linear-gradient(bottom center, var(--color-match) var(--percentage-match), white var(--percentage-match));
-    //background: -o-linear-gradient(bottom, var(--color-match) var(--percentage-match), white var(--percentage-match));
   background: linear-gradient(to top, var(--color-match) var(--percentage-match), white var(--percentage-match));
 }
 
@@ -61,4 +61,7 @@
   font-size:16px;
 }
 
+a:hover  {
+  text-decoration:none;
+}
 

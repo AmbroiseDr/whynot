@@ -1,29 +1,81 @@
-<% user = User.find(11) %>
+<% user = @match %>
 
 <div class="container mb-4">
   <div class="d-flex flex-column">
-    <%= cl_image_tag user.photo.key, id:"profile-picture", class:"m-3", crop: :thumb %>
+    <%if user.photo.attached? %>
+      <%= cl_image_tag user.photo.key, id:"profile-picture", class:"m-3", crop: :thumb %>
+      <% else %>
+      <i class="fas fa-user-edit"></i>
+    <% end %>
     <div class="description-header">
       <h5> <%= user.name.capitalize %></h5>
-      <h6>24<%= user.age %>ANS</h6>
+      <% if user.age.nil? %>
+        <% else %>
+        <h6><%= user.age %>ANS</h6>
+        <% end %>
     </div>
     <div class="user-description">
       <hr class="ml-3 mr-3 mt-1 mb-1">
       <i class="far fa-user"></i>
-      <p><%=user.description%></p>
+      <p><%=user.profile_mbti.description%></p>
       <hr class="ml-3 mr-3 mt-1 mb-1">
     </div>
     <div class="user-preferences m-2">
       <div class="pref">
-        <i class="fas fa-suitcase mr-3 ml-2"></i>
-        <p><%=user.job%></p>
+        <% if user.job.nil? %>
+          <% else %>
+          <i class="fas fa-suitcase mr-3 ml-2"></i>
+          <p>Investment annalyst<%=user.job%></p>
+        <% end %>
       </div>
       <div class="pref">
-      <i class="fas fa-video mr-3 ml-2"></i>
-      <p><%= user.movie_title %></p>
+        <% if user.job.nil? %>
+          <% else %>
+          <i class="fas fa-video mr-3 ml-2"></i>
+          <p><%= user.movie_title %></p>
+          <% end %>
       </div>
     </div>
-    <h5>Mes activités</h5>
-    <p>  <%= user.tag_list%> </p>
+    <h5 id="act" class="ml-3">Mes activités</h5>
+    <hr class="ml-3 mr-3 mt-1 mb-1">
+    <% if user.tag_list.nil? %>
+      <% else %>
+      <div class="cards-activities ml-5 mr-5 mt-2">
+        <%user.tag_list.each do |tag|%>
+          <div class="clickable">
+            <%if tag=="sport"  %>
+              <i class="fas fa-football-ball"></i>
+              <small>Sport</small>
+              <% elsif tag=="cooking"%>
+              <i class="fas fa-utensils"></i>
+              <small>Cours de cuisine</small>
+              <% elsif tag=="museum" %>
+              <i class="fas fa-paint-brush"></i>
+              <small>Exposition</small>
+              <% elsif tag=="music" %>
+              <i class="fas fa-music"></i>
+              <small>Concert</small>
+              <% elsif tag=="walk"%>
+              <i class="fas fa-tree"></i>
+              <small>Promenade</small>
+              <% elsif tag=="cofee" %>
+              <i class="fas fa-coffee"></i>
+              <small>Café</small>
+              <% elsif tag=="game"%>
+              <i class="fas fa-chess-knight"></i>
+              <small>Bar à jeux</small>
+              <% elsif tag=="escapes" %>
+              <i class="fas fa-search"></i>
+              <small>Escape game</small>
+            <%end %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+    <% if @user == @match %>
+      <%= link_to "Modifier", edit_profile_path, class:"btn btn-warning" %>
+    <% end %>
   </div>
 </div>
+
+

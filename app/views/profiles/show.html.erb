@@ -1,17 +1,19 @@
 <!-- Cloudinary - Ajouter le crop avec déterction du visage -->
 <!-- Afficher les tags d'activités -->
-<div class="container mb-4">
+<div class="container">
   <div class="d-flex flex-column">
-    <%if current_user.photo.attached? %>
-      <%= cl_image_tag current_user.photo.key, id:"profile-picture", class:"m-3", crop: :thumb %>
-      <% else %>
-      <i class="fas fa-user-edit"></i>
-    <% end %>
+    <div class="show-image justify-content-center">
+      <%if current_user.photo.attached? %>
+        <%= cl_image_tag current_user.photo.key, id:"profile-picture", crop: :thumb %>
+        <% else %>
+        <i class="fas fa-user-edit"></i>
+      <% end %>
+    </div>
     <div class="description-header">
       <h5> <%= current_user.name.capitalize %></h5>
       <% if current_user.age.nil? %>
         <% else %>
-        <h6><%= current_user.age %>ANS</h6>
+        <h6><%= current_user.age %> ANS</h6>
         <% end %>
     </div>
     <div class="user-description">
@@ -25,7 +27,7 @@
         <% if current_user.job.nil? %>
           <% else %>
           <i class="fas fa-suitcase mr-3 ml-2"></i>
-          <p>Investment annalyst<%=current_user.job%></p>
+          <p><%=current_user.job%></p>
         <% end %>
       </div>
       <div class="pref">
@@ -72,7 +74,7 @@
         <% end %>
       </div>
     <% end %>
-    <%= link_to "Modifier", edit_profile_path, class:"btn btn-warning" %>
+    <%= link_to "Modifier", edit_profile_path, class:"btn btn-warning mb-3" %>
   </div>
 </div>
 
