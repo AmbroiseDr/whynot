@@ -4,9 +4,11 @@
     <i class="fas fa-sync-alt"></i>
   </div>
   <div class="cards-matches">
-      <%= render 'shared/card' %>
-      <%= render 'shared/card' %>
-      <%= render 'shared/card' %>
-      <%= render 'shared/card' %>
+    <% @matches.each do |match| %>
+      <%= link_to match_path(match) do %>
+       <%= render partial: "shared/card", locals:{match: match} %>
+      <% end %>
+    <%end %>
   </div>
 </div>
+

@@ -58,7 +58,7 @@ user = User.new(email:"pauline@gm.com",password: "azerty",  name: "Pauline", des
 user.profile_mbti = ProfileMbti.where(mbti: "ISFJ").take
 user.save
 
-user = User.new(email:"syb@edhec.com", password: "azerty", name: "Sybille", description:"Ecologiste et philanthrope", job:"Humanitaire chez Oxfam", age:23, sex: "F", song:"Zazie")
+user = User.new(email:"syb@edhec.com", password: "azerty", name: "Sybile", description:"Ecologiste et philanthrope", job:"Humanitaire chez Oxfam", age:23, sex: "F", song:"Zazie")
 user.profile_mbti = ProfileMbti.where(mbti: "INFJ").take
 user.save
 
