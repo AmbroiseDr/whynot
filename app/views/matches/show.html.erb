@@ -25,11 +25,11 @@
         <% if user.job.nil? %>
           <% else %>
           <i class="fas fa-suitcase mr-3 ml-2"></i>
-          <p>Investment annalyst<%=user.job%></p>
+          <p><%=user.job%></p>
         <% end %>
       </div>
       <div class="pref">
-        <% if user.job.nil? %>
+        <% if user.movie_title.nil? %>
           <% else %>
           <i class="fas fa-video mr-3 ml-2"></i>
           <p><%= user.movie_title %></p>
@@ -74,6 +74,8 @@
     <% end %>
     <% if @user == @match %>
       <%= link_to "Modifier", edit_profile_path, class:"btn btn-warning" %>
+    <% else %>
+      <%= link_to "Contacter  👥", matches_path, class:"btn btn-warning" %>
     <% end %>
   </div>
 </div>

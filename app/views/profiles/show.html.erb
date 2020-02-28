@@ -31,7 +31,7 @@
         <% end %>
       </div>
       <div class="pref">
-        <% if current_user.job.nil? %>
+        <% if current_user.movie_title.nil? %>
           <% else %>
           <i class="fas fa-video mr-3 ml-2"></i>
           <p><%= current_user.movie_title %></p>
