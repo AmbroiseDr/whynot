@@ -1,40 +1,25 @@
 const clickTags = () => {
-  const tags = document.getElementById('user_form_tag_list')
+  const editImage = document.querySelector(".edit-image")
+  const tags = document.querySelectorAll(".clickable")
 
-  if (tags) {
-    const icons = document.querySelectorAll(".clickable");
+  if (editImage) {
+    const updateValueInput = (tag) => {
+      if (tag.classList.contains("active")) {
+          document.getElementById('user_form_tag_list').value = document.getElementById('user_form_tag_list').value + "," + tag.dataset.value
+        };
+    };
 
-    icons.forEach((icon) => {
-      icon.addEventListener('click', (event) => {
-        tags.value += icon.dataset.value + ',';
-        icon.classList.toggle("active")
-      });
-    });
+    const toggleActiveClass = (event) => {
+      document.getElementById('user_form_tag_list').value = ""
+      event.currentTarget.classList.toggle('active');
+      tags.forEach(updateValueInput)
+    };
 
+    const toggleActiveOnClick = (tag) => {
+      tag.addEventListener('click', toggleActiveClass);
+    };
 
-
-
-
-
-// A GERER DEMAIN: quand on clique plusieurs fois
-
-  //   const updateValueInput = (tag) => {
-  //     if (tag.classList.contains("active")) {
-  //         document.getElementById('tag').value = document.getElementById('tag').value + "," + tag.innerText
-  //       };
-  //   };
-
-  //   const toggleActiveClass = (event) => {
-  //     document.getElementById('tag').value = ""
-  //     event.currentTarget.classList.toggle('active');
-  //     tags.forEach(updateValueInput)
-  //   };
-
-  //   const toggleActiveOnClick = (tag) => {
-  //     tag.addEventListener('click', toggleActiveClass);
-  //   };
-
-  //   tags.forEach(toggleActiveOnClick);
+    tags.forEach(toggleActiveOnClick);
   }
 };
 

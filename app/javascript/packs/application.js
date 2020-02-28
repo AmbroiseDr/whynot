@@ -8,3 +8,9 @@ clickTags();
 import { searchMovie } from '../components/search_movie';
 searchMovie();
 
+
+import { activateTagsOnLoad } from '../components/activate_tags_edit_open';
+
+
+window.addEventListener("load",activateTagsOnLoad)
+
