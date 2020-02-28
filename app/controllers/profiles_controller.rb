@@ -30,7 +30,7 @@ class ProfilesController < ApplicationController
     tags = count_tags(tags).each do |tag|
       current_user.tag_list.add(tag)
     end
-    current_user.photo = profile_params[:photo]
+    current_user.photo = profile_params[:photo] unless profile_params[:photo].nil?
     current_user.update(profile_params)
     redirect_to profile_path
   end
