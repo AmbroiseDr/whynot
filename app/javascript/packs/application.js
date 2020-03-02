@@ -11,6 +11,8 @@ searchMovie();
 
 import { activateTagsOnLoad } from '../components/activate_tags_edit_open';
 
+import { scrollLastMessageIntoView } from '../components/scroll';
+scrollLastMessageIntoView();
 
 window.addEventListener("load",activateTagsOnLoad)
 
