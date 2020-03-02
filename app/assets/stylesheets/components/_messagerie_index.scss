@@ -1,0 +1,131 @@
+.header-message{
+  background-color:rgba(255,14,72,0.8);
+  font-size:24px;
+  color:white;
+  font-weight:800;
+  position:relative;
+  text-align:center;
+}
+
+
+
+.header-message a {
+  text-decoration: none;
+  color:white;
+  position:absolute;
+  left: 10px;
+}
+
+.header-message .conv-name {
+  text-align:center;
+}
+
+.conversations{
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+}
+
+.card-product {
+  overflow: hidden;
+  height: 80px;
+  background: white;
+  box-shadow: 0 0 15px rgba(255,14,72,0.2);
+  display: flex;
+  align-items: center;
+  margin: 20px;
+  padding-left:10px;
+  margin-bottom:0px;
+  border-radius:20px;
+}
+
+.card-product img {
+  height: 60px;
+  width: 60px;
+  object-fit: cover;
+  border-radius:50%;
+  border:solid 1px rgba(255,14,72,0.5);
+}
+
+.card-product h2 {
+  font-size: 16px;
+  font-weight: 900;
+  font-style:italic;
+  margin: 0;
+  color: $orange;
+
+}
+
+.card-product p {
+  color:black;
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-product .card-product-infos {
+  padding: 16px;
+}
+
+.text-message {
+  margin: 0;
+  padding: 5px;
+  font-weight:500;
+
+}
+
+.messages ul {
+   margin:0;
+   padding:0;
+   list-style-type: none;
+   display:flex;
+   flex-direction:column;
+}
+
+.receiver-message{
+  background-color: white;
+  border-radius:20px;
+  border: solid 0.5px rgba(255,14,72,0.6);
+  color: rgba(255,14,72,0.4);
+  padding: 10px;
+  text-align:middle;
+}
+
+.sender-message{
+  background-color: rgba(255,14,72,0.8);
+  border-radius:20px;
+  padding:10px;
+
+}
+.talk-bubble-receiver {
+  margin: 10px;
+  display: inline-block;
+  position: relative;
+  width: 50%;
+  height: auto;
+  display: flex;
+  color:black;
+
+  }
+
+.talk-bubble-sender{
+  margin: 10px;
+  display: inline-block;
+  position: relative;
+  height: auto;
+  display: flex;
+  align-self:flex-end;
+  color:white;
+  }
+
+.messages img {
+  height: 30px;
+  width: 30px;
+  object-fit: cover;
+  border-radius:50%;
+  border:solid 1px rgba(255,14,72,0.5);
+  align-self:flex-end;
+}
+
