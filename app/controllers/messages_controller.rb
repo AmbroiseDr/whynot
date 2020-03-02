@@ -7,6 +7,8 @@ class MessagesController < ApplicationController
     @messages = current_user.conversation_with(params[:user_id])
     @message  = Message.new
     @friend   = User.find(params[:user_id])
+
+    @chat_room_id = current_user.id * @friend.id
   end
 
   def create

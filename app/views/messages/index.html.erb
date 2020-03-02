@@ -7,7 +7,7 @@
       <% if @friend.name == message.sender.name %>
         <div class="talk-bubble-receiver">
           <% if @friend.photo.attached? %>
-            <%= cl_image_tag @friend.photo.key, crop: :thumb %>
+            <%= cl_image_tag @friend.photo.key, crop: :thumb, class: "avatar-friend" %>
           <% end %>
           <li class= "receiver-message"><p class ="text-message"><%= message.content %></p></li>
         </div>
@@ -25,3 +25,35 @@
 </div>
 
 
+
+<% content_for :after_js do %>
+  <script>
+    App['chat_room_<%= @chat_room_id %>'] = App.cable.subscriptions.create(
+      { channel: 'ChatRoomsChannel', chat_room_id: <%= @chat_room_id %> },
+      {
+        received: (data) => {
+
+          if (data.sender !== <%= current_user.id %>) {
+            const newMessage = data.message;
+            const messageList = document.querySelector('ul');
+
+            const imgElement = document.querySelector('.avatar-friend');
+            let imageHTML = null;
+
+            if (imgElement) {
+              const imageUrl = imgElement.attributes['src'].value
+              imageHTML = `<img src="${imageUrl}" class="avatar-friend" />`
+            }
+            const html = `
+              <div class="talk-bubble-receiver">
+                ${imageHTML}
+                <li class= "receiver-message"><p class ="text-message">${newMessage}</p></li>
+              </div>
+            `
+            messageList.insertAdjacentHTML('beforeend', html)
+          }
+        }
+      }
+    );
+  </script>
+<% end %>
