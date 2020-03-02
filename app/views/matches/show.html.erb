@@ -1,83 +1,89 @@
 <% user = @match %>
-
-<div class="container mb-4">
+<div class="container">
   <div class="d-flex flex-column">
-    <%if user.photo.attached? %>
-      <%= cl_image_tag user.photo.key, id:"profile-picture", class:"m-3", crop: :thumb %>
-      <% else %>
-      <i class="fas fa-user-edit"></i>
-    <% end %>
-    <div class="description-header">
-      <h5> <%= user.name.capitalize %></h5>
-      <% if user.age.nil? %>
+    <div class="show-image justify-content-center">
+      <%if user.photo.attached? %>
+        <%= cl_image_tag user.photo.key, id:"profile-picture", crop: :thumb %>
         <% else %>
-        <h6><%= user.age %>ANS</h6>
-        <% end %>
+        <i class="fas fa-user-edit"></i>
+      <% end %>
     </div>
-    <div class="user-description">
-      <hr class="ml-3 mr-3 mt-1 mb-1">
-      <i class="far fa-user"></i>
-      <p><%=user.profile_mbti.description%></p>
-      <hr class="ml-3 mr-3 mt-1 mb-1">
-    </div>
-    <div class="user-preferences m-2">
-      <div class="pref">
-        <% if user.job.nil? %>
+    <div class = "card-description-profile pb-4">
+      <div class="description-header mt-5 pt-2">
+        <h5> <%= user.name.capitalize %></h5>
+        <%if user.age.nil? %>
           <% else %>
-          <i class="fas fa-suitcase mr-3 ml-2"></i>
-          <p><%=user.job%></p>
-        <% end %>
+          <h6><%= user.age %> ANS</h6>
+        <%end %>
       </div>
-      <div class="pref">
-        <% if user.movie_title.nil? %>
-          <% else %>
-          <i class="fas fa-video mr-3 ml-2"></i>
-          <p><%= user.movie_title %></p>
+        <div class="progress ml-5 mr-5 rounded-pill">
+          <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+      <div class="user-description mt-3">
+        <p><%=user.profile_mbti.description%></p>
+        <hr class="ml-3 mr-3 mt-1 mb-1">
+      </div>
+      <div class="user-preferences">
+        <div class="pref pr-3 pl-4 mt-2">
+          <% if user.job.nil? %>
+            <% else %>
+            <i class="fas fa-suitcase"></i>
+            <p class="ml-3"><%=user.job%></p>
           <% end %>
+        </div>
+        <div class="pref pr-3 pl-4 mt-2">
+          <% if user.movie_title.nil? %>
+            <% else %>
+            <i class="fas fa-video"></i>
+            <p class="ml-3"><%= user.movie_title %></p>
+            <% end %>
+        </div>
       </div>
+      <% if user.tag_list.nil? %>
+        <% else %>
+        <div class="cards-activities ml-5 mr-5 mt-3">
+          <%user.tag_list.each do |tag|%>
+            <div class="clickable">
+              <%if tag=="sport"  %>
+                <i class="fas fa-football-ball"></i>
+                <small>Sport</small>
+                <% elsif tag=="cooking"%>
+                <i class="fas fa-utensils"></i>
+                <small>Cours de cuisine</small>
+                <% elsif tag=="museum" %>
+                <i class="fas fa-paint-brush"></i>
+                <small>Exposition</small>
+                <% elsif tag=="music" %>
+                <i class="fas fa-music"></i>
+                <small>Concert</small>
+                <% elsif tag=="walk"%>
+                <i class="fas fa-tree"></i>
+                <small>Promenade</small>
+                <% elsif tag=="cofee" %>
+                <i class="fas fa-coffee"></i>
+                <small>Café</small>
+                <% elsif tag=="game"%>
+                <i class="fas fa-chess-knight"></i>
+                <small>Bar à jeux</small>
+                <% elsif tag=="escapes" %>
+                <i class="fas fa-search"></i>
+                <small>Escape game</small>
+              <%end %>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
     </div>
-    <h5 id="act" class="ml-3">Mes activités</h5>
-    <hr class="ml-3 mr-3 mt-1 mb-1">
-    <% if user.tag_list.nil? %>
-      <% else %>
-      <div class="cards-activities ml-5 mr-5 mt-2">
-        <%user.tag_list.each do |tag|%>
-          <div class="clickable">
-            <%if tag=="sport"  %>
-              <i class="fas fa-football-ball"></i>
-              <small>Sport</small>
-              <% elsif tag=="cooking"%>
-              <i class="fas fa-utensils"></i>
-              <small>Cours de cuisine</small>
-              <% elsif tag=="museum" %>
-              <i class="fas fa-paint-brush"></i>
-              <small>Exposition</small>
-              <% elsif tag=="music" %>
-              <i class="fas fa-music"></i>
-              <small>Concert</small>
-              <% elsif tag=="walk"%>
-              <i class="fas fa-tree"></i>
-              <small>Promenade</small>
-              <% elsif tag=="cofee" %>
-              <i class="fas fa-coffee"></i>
-              <small>Café</small>
-              <% elsif tag=="game"%>
-              <i class="fas fa-chess-knight"></i>
-              <small>Bar à jeux</small>
-              <% elsif tag=="escapes" %>
-              <i class="fas fa-search"></i>
-              <small>Escape game</small>
-            <%end %>
-          </div>
-        <% end %>
-      </div>
-    <% end %>
-    <% if @user == @match %>
-      <%= link_to "Modifier", edit_profile_path, class:"btn btn-warning" %>
-    <% else %>
-      <%= link_to "Contacter  👥", user_messages_path(user.id), class:"btn btn-warning" %>
-    <% end %>
+  </div>
+  <div class="d-flex justify-content-center">
+    <%= link_to "Contacter", user_messages_path(user.id), class:"btn btn-warning mb-3 pt-1 pb-1 w-50 rounded-pill btn-modifier" %>
   </div>
 </div>
+
+<%# if @user == @match %>
+<%# link_to "Modifier", edit_profile_path, class:"btn btn-warning" %>
+<%# else %>
+<%# link_to "Contacter  👥", user_messages_path(user.id), class:"btn btn-warning" %>
+<%# end %>
 
 
