@@ -1,6 +1,6 @@
 <div class="footer">
     <%= link_to profile_path, class:"footbar-btn #{"active" if params[:controller] == 'profiles'}" do %>
-      <i class="far fa-user"></i>
+      <i class="fas fa-user"></i>
     <% end %>
     <%= link_to matches_path, class:"footbar-btn #{"active" if params[:controller] == 'matches'}" do %>
       <i class="fas fa-home"></i>
@@ -9,6 +9,6 @@
       <i class="fas fa-map-marker-alt"></i>
     <% end %>
     <%= link_to messages_conversations_path, class:"footbar-btn #{"active" if params[:controller] == 'messages'}" do %>
-      <i class="far fa-comment"></i>
+      <i class="fas fa-comment"></i>
     <% end %>
 </div>
