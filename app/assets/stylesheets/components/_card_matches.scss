@@ -4,61 +4,63 @@
 }
 
 .card-matches{
-  text-align: center;
-  background-color: rgba(255,14,72, 0.2);
-  padding:0;
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  align-items: center;
+  padding: 15px 25px;
   border-radius:8px;
-  width:40vw;
-  margin: 0 auto;
-  position:relative;
-  height: 30vh;
-  border-bottom: 0 none;
+  width:100%;
+  height: 10vh;
   text-decoration:none;
   color:black;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.46);
-  background: -webkit-gradient(linear, bottom left, right top, color-stop(var(--percentage-match),var(--color-match)), color-stop(var(--percentage-match),white));
-  background: linear-gradient(to top, var(--color-match) var(--percentage-match), white var(--percentage-match));
+  //background: -webkit-gradient(linear, bottom left, right top, color-stop(var(--percentage-match),var(--color-match)), color-stop(var(--percentage-match),white));
+  // background: linear-gradient(to top, var(--color-match) var(--percentage-match), white var(--percentage-match));
 }
 
-.first-name-matches{;
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 29px;
-  align-items: center;
-  text-align: center;
+.emoji-m {
+  font-size: 13vw;
+  padding-top:10px;
+}
+
+.first-name-matches{
+  font-weight: bold;
+  font-size: 20px;
+  color: #FF0E48;
+}
+
+.profile-match {
+  justify-content: left;
+  flex-grow: 1;
+  padding: 0 15px;
 }
 
 .age-matches{
+  font-size: 15px;
+  text-align:left;
   font-weight: lighter;
-  font-size: 13px;
 }
 
 .description-matches{
+  font-size: 15px;
+  text-align:left;
   font-weight: lighter;
-  font-size:14px;
 }
 
 .percentage-matches{
-  font-size:14px;
-  font-weight:600;
+  font-size:35px;
+  text-align:right;
+  font-weight:bold;
+  color: #FF0E48;
 }
 
-.distance-matches{
-  font-size:10px;
-  font-weight:lighter;
-  position:absolute;
-  right:10px;
-  bottom:10px;
-}
 
 .cards-matches{
   display:grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   grid-gap: 1em 0;
-  margin-top:10vh;
-}
-.age-matches{
-  font-size:16px;
+  margin-top: 6vh;
 }
 
 a:hover  {
