@@ -1,7 +1,21 @@
+
+.card-description-profile {
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.05);
+  margin: -56px 0 0 0 ;
+}
+
 .description-header {
   font-style: normal;
   display: flex;
   justify-content: space-around;
+  h5 {
+    color: #FF0E48;
+    }
+  h6 {
+    font-weight: 300;
+  }
 }
 
 hr {
@@ -10,16 +24,10 @@ hr {
   margin: 0;
 }
 
-.user-description .fa-user{
-  color: #FF0E48;
-  font-size: 16px;
-  display: flex;
-  justify-content: center;
-}
-
 .user-description p{
   text-align: center;
-  margin: 5px 15px
+  margin: 5px 15px;
+  font-weight: 350;
 }
 
 .pref {
@@ -29,4 +37,12 @@ hr {
   }
   display: flex;
   justify-content: flex-start;
+}
+
+.user-preferences p {
+  font-weight: 300;
+}
+
+.btn-modifier {
+  margin: -18px 0 0 0;
 }
