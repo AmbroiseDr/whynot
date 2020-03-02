@@ -14,3 +14,8 @@ import { activateTagsOnLoad } from '../components/activate_tags_edit_open';
 
 window.addEventListener("load",activateTagsOnLoad)
 
+import { stepsEdit } from '../components/steps_edit_profile';
+stepsEdit();
+
+import { smileySelection } from '../components/smiley_selection';
+smileySelection();

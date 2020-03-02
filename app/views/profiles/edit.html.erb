@@ -1,34 +1,57 @@
 <div class="container">
-  <div class="d-flex flex-column">
+  <div class="d-flex flex-column card-edit">
     <%= simple_form_for(@profile, url: profile_path, method: :patch) do |f| %>
-      <div class="edit-image justify-content-center">
-        <% if current_user.photo.attached? %>
-          <%= cl_image_tag current_user.photo.key, id:"profile-picture", crop: :thumb %>
-        <% end %>
-        <div class="edit-image-content">
-          <h2>Votre photo</h2>
-          <%= f.input :photo, as: :file, label: false  %>
+
+      <div class="step">
+        <div class="edit-image justify-content-center d-flex flex-column">
+          <div class="edit-image-content">
+            <h2>Votre photo</h2>
+          </div>
+          <% if current_user.photo.attached? %>
+            <%= cl_image_tag current_user.photo.key, crop: :thumb %>
+          <% end %>
+          <div class="d-flex justify-content-center mt-3">
+            <label class="btn btn-warning mb-3 p-1 w-50 rounded-pill">
+              <%= f.input :photo, as: :file, wrapper_html: {class: "d-none"} %>
+              Changer de photo
+            </label>
+          </div>
         </div>
       </div>
-      <div class="description-header">
-        <h5> <%= current_user.name.capitalize %></h5>
-        <% if current_user.age.nil? %>
-          <% else %>
-          <h6><%= current_user.age %> ANS</h6>
-          <% end %>
+
+      <div class="step d-none">
+        <h2>Ton émoji</h2>
+        <div class="d-flex justify-content-center mt-3">
+          <%= f.input :smiley, label: false, input_html: { maxlength: 1 }, placeholder: "ici" %>
+        </div>
+        <div class="d-flex flex-column justify-content-center mt-3 align-items-center">
+          <h3>Suggestions</h3>
+          <div class="smileys mt-3">
+                <li>🔥</li>
+                <li>❤️</li>
+                <li>🤷</li>
+                <li>🦄</li>
+                <li>🤪</li>
+                <li>🤨</li>
+                <li>🤠</li>
+                <li>🤓</li>
+          </div>
+        </div>
       </div>
-      <div class="user-description">
-        <hr class="ml-3 mr-3 mt-1 mb-1">
-        <i class="far fa-user"></i>
-        <p><%=current_user.profile_mbti.description%></p>
-        <hr class="ml-3 mr-3 mt-1 mb-1">
+
+      <div class="step d-none">
+        <h2>Description</h2>
+        <div class="d-flex justify-content-center mt-3">
+          <%= f.input :description, input_html: { maxlength: 30 }, label: false %>
+        </div>
       </div>
-      <h2>Ton émoji</h2>
-      <%= f.input :smiley, label: false %>
-      <h2>Description</h2>
-      <%= f.input :description, input_html: { maxlength: 50 }, label: false %>
-      <h2>Métier</h2>
-      <%= f.input :job, input_html: { maxlength: 50 }, label: false  %>
+
+      <div class="step d-none">
+        <h2>Métier</h2>
+        <%= f.input :job, input_html: { maxlength: 50 }, label: false  %>
+      </div>
+
+      <div class="step d-none">
         <h2>Votre film préféré</h2>
         <%= render "search_movie" %>
         <% if current_user.movie_title != nil %>
@@ -48,13 +71,36 @@
         <%= f.input :movie_year, wrapper_html: {class: "d-none"}  %>
         <%= f.input :movie_image_url, wrapper_html: {class: "d-none"}  %>
       </div>
-      <h2>Les activités qui vous plaisent</h2>
-      <%= render "tags" %>
-      <%= f.input :form_tag_list, wrapper_html: {class: "d-none"} %>
-      <div class="d-flex justify-content-center flex-column align-items-center">
-        <%= f.button :submit, "Mettre à jour", class: "btn btn-warning p-2 w-50 rounded-pill" %>
-        <%= link_to "Annuler", profile_path %></h3>
+
+      <div class="step d-none">
+        <h2>Les activités qui vous plaisent</h2>
+        <%= render "tags" %>
+        <%= f.input :form_tag_list, wrapper_html: {class: "d-none"} %>
+      </div>
+
+      <div class="step d-none">
+        <div class="d-flex justify-content-center flex-column align-items-center">
+          <%= f.button :submit, "Mettre à jour", class: "btn btn-warning p-2 w-50 rounded-pill" %>
+          <%= link_to "Annuler", profile_path %></h3>
+        </div>
       </div>
     <% end %>
+
+    <div class="mt-auto p-2 bd-highlight">
+      <div class="question-links">
+        <a href="#" id="precedent">Précédent</a>
+        <a href="#" id="suivant">Suivant</a>
+      </div>
+
+      <div class="progression">
+        <span class="prog active" data-index="0"></span>
+        <span class="prog" data-index="1"></span>
+        <span class="prog" data-index="2"></span>
+        <span class="prog" data-index="3"></span>
+        <span class="prog" data-index="4"></span>
+        <span class="prog" data-index="5"></span>
+        <span class="prog" data-index="6"></span>
+      </div>
+    </div>
   </div>
 </div>

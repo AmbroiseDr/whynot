@@ -31,15 +31,13 @@
   margin: 10px 0 10px 0;
   border-radius: 5px;
   display: flex;
-  img {
-    position : relative;
-    opacity: 0.5;
-  }
-  .edit-image-content {
-    position : absolute;
-    left: 52px;
-    top: 20px;
-  }
+  text-align: center;
+}
+
+.edit-image img {
+  padding: 20px;
+  opacity: 0.7;
+  border-radius: 30px;
 }
 
 #user_description {
@@ -56,4 +54,70 @@
   border-radius: 50px;
   height: 40px;
   border: 1px solid rgba(255,14,72, 0.5);
+}
+
+
+#user_smiley {
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
+  height: 40px;
+  border: 1px solid rgba(255,14,72, 0.5);
+  width: 55px;
+  height:50px;
+  font-size:30px;
+}
+
+.user_description {
+
+}
+
+.progression {
+  text-align:center;
+  margin-top:10px;
+  margin-bottom: 10px;
+}
+
+.prog {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: rgb(255, 14, 12);
+  border: none;
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.1;
+}
+
+/* Mark the active step: */
+.prog.active {
+  opacity: 1;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.custom-file-upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+
+
+
+.smileys li{
+  list-style-type: none;
+  font-size: 45px;
+}
+
+.smileys {
+    -webkit-column-count: 2; /* Chrome, Safari, Opera */
+    -moz-column-count: 2; /* Firefox */
+    column-count: 2;
+    -webkit-column-gap: 5px; /* Chrome, Safari, Opera */
+    -moz-column-gap: 5px; /* Firefox */
+    column-gap: 105px;
+    width: 180px;
 }
