@@ -6,7 +6,9 @@
     <% @messages.each do |message| %>
       <% if @friend.name == message.sender.name %>
         <div class="talk-bubble-receiver">
-        <%= cl_image_tag @friend.photo.key, crop: :thumb %>
+          <% if @friend.photo.attached? %>
+            <%= cl_image_tag @friend.photo.key, crop: :thumb %>
+          <% end %>
           <li class= "receiver-message"><p class ="text-message"><%= message.content %></p></li>
         </div>
       <% else %>

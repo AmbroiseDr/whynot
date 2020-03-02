@@ -6,7 +6,9 @@
     <% @users_with_conversation.each do |user| %>
       <%= link_to user_messages_path(user) do %>
         <div class="card-product">
-          <%= cl_image_tag user.photo.key, crop: :thumb %>
+          <% if user.photo.attached? %>
+            <%= cl_image_tag user.photo.key, crop: :thumb %>
+          <% end %>
           <div class="card-product-infos">
             <h2><%= user.name %></h2>
             <p><%= current_user.conversation_with(user.id).last.content %></p>
