@@ -1,12 +1,27 @@
-<h3>Ma conversation avec <%= @friend.name %></h3>
-  <% @messages.each do |message| %>
-    <ul>
-      <li><p><%= message.sender.name %> dit : <%= message.content %></p></li>
-    </ul>
-  <% end %>
+<div class="header-message">
+  <%= link_to '<', conversations_path %>
+  <span class="conv-name"><%= @friend.name %></span> </div>
+<div class="messages">
+  <ul>
+    <% @messages.each do |message| %>
+      <% if @friend.name == message.sender.name %>
+        <div class="talk-bubble-receiver">
+          <% if @friend.photo.attached? %>
+            <%= cl_image_tag @friend.photo.key, crop: :thumb %>
+          <% end %>
+          <li class= "receiver-message"><p class ="text-message"><%= message.content %></p></li>
+        </div>
+      <% else %>
+        <div class="talk-bubble-sender">
+          <li class="sender-message"><p class ="text-message"><%= message.content %></p></li>
+        </div>
+      <% end %>
+    <% end %>
+  </ul>
  <%= simple_form_for [@friend, @message] do |f| %>
-   <%= f.input :content %>
-   <%= f.submit "Envoyer un message", class: "btn btn-primary" %>
+   <%= f.input :content, placeholder:"Ton message",label: false %>
+   <%= f.submit "Envoyer un message", class: "btn btn-warning w-100" %>
  <% end %>
+</div>
 
-<%= link_to 'Retour aux conversations', conversations_path %>
+

@@ -1,7 +1,7 @@
 .clickable {
-  width: 120px;
-  height: 120px;
-  border: 1px solid #FF0E48;
+  width: 107px;
+  height: 107px;
+  border: 2px solid #FF0E48;
   color: #A0A0A0;
   margin-right: 10px;
   margin-bottom: 10px;
@@ -11,25 +11,53 @@
   text-align:center;
   cursor: pointer;
   border-radius: 5px;
+  color: #FF0E48;
+
+  .fas {
+    color: #FF0E48;
+    font-size: 38px;
+  }
 }
 
 
 .clickable:hover i {
-  color: #FF0E48;
+  background-color: #FF0E48;
+  color: white;
+    .fas {
+      color: white;
+      font-size: 38px;
+  }
 }
 .clickable.active {
-  color: inherit;
-  border-color: inherit;
+  background-color: #FF0E48;
+  color: white;
+    .fas {
+      color: white;
+      font-size: 38px;
+  }
 }
 .clickable.active i {
-  color: #FF0E48;
+  background-color: #FF0E48;
+  color: white;
+    .fas {
+      color: white;
+      font-size: 38px;
+  }
 }
 
 .clickable i {
   font-size: 24px;
   margin-bottom: 10px;
+    .fas {
+      color: white;
+      font-size: 38px;
+  }
 }
 
+.clickable:hover {
+  background-color: #FF0E48;
+  color: white;
+}
 .index i {
   font-size: 16px;
   margin-bottom: 5px;

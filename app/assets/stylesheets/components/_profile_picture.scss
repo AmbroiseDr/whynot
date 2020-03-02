@@ -1,13 +1,15 @@
 #profile-picture {
-width: 80vw;
-height: 33vh;
-border-radius: 8px;
+width: 55vw;
+height: 30vh;
+border-radius: 50%;
+border: white solid 4px;
 display: flex;
 justify-content: center;
 object-fit: cover;
 }
 
 .fa-user-edit {
+  z-index: 1;
   font-size: 100px;
   color: #FF0E48;
   text-align: center;
