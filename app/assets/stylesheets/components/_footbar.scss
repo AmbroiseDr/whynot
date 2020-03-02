@@ -6,11 +6,11 @@
   align-items: center;
   height: 64px;
   padding: 0px;
-  color: #FB5607;
+  color: #FF0E48;
   bottom:0;
   position:fixed;
   justify-content:space-around;
-  border-top: 1px solid rgba(251, 86, 7,0.5);
+  border-top: 1px solid rgba(255,14,72,0.5);
 }
 
 .body-content{
@@ -18,18 +18,18 @@
 }
 
 .footbar-btn{
-  color: #FB5607;
+  color: #FF0E48;
   opacity: 0.50;
   text-decoration: none;
   font-size: 24px;
 
   &:hover{
     opacity:1;
-    color: #FB5607;
+    color: #FF0E48;
   }
 
   &.active {
-    color: #FB5607;
+    color: #FF0E48;
     opacity:1;
   }
 }

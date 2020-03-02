@@ -1,7 +1,7 @@
 .clickable {
   width: 120px;
   height: 120px;
-  border: 1px solid #FB5607;
+  border: 1px solid #FF0E48;
   color: #A0A0A0;
   margin-right: 10px;
   margin-bottom: 10px;
@@ -15,14 +15,14 @@
 
 
 .clickable:hover i {
-  color: #FB5607;
+  color: #FF0E48;
 }
 .clickable.active {
   color: inherit;
   border-color: inherit;
 }
 .clickable.active i {
-  color: #FB5607;
+  color: #FF0E48;
 }
 
 .clickable i {
