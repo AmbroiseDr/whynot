@@ -8,8 +8,17 @@
   font-size: 20px;
 }
 
+.top-bar .logo {
+  width : 45px;
+  height : 55px;
+  border-radius: 50%;
+  text-align: center;
+  padding-top: 6px;
+}
+
 .top-bar i {
-  background-color: #FF0E48;
+  color: #FF0E48;
+  font-size: 30px;
   width : 35px;
   height : 35px;
   border-radius: 50%;
@@ -17,4 +26,14 @@
   padding-top: 6px;
 }
 
+.reload-btn {
+  font-size: 100px;
+  color: #FF0E48;
+  // justify-content:center;
+  text-align: center;
+  margin-top: 5vh;
+}
 
+.container i .fa-cog {
+  justify-content: center;
+}

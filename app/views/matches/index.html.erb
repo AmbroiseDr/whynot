@@ -1,10 +1,13 @@
 <div class="container">
   <div class="top-bar">
+    <div class = "logo"><%= cl_image_tag("llpfrsdiwc27yqhw6j0v", width: 50, height: 40, crop: :fill) %></div>
     <i class="fas fa-cog"></i>
-    <%= link_to question_path(1) do%>
-      <i class="fas fa-sync-alt"></i>
-    <%end%>
   </div>
+  <%= link_to question_path(1) do%>
+    <div class="reload-btn">
+      <i class="fas fa-sync-alt"></i>
+    </div>
+  <%end%>
   <div class="cards-matches">
     <% @matches.each do |match| %>
       <%= link_to match_path(match) do %>
@@ -13,4 +16,3 @@
     <%end %>
   </div>
 </div>
-
