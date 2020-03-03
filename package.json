@@ -5,6 +5,7 @@
     "@rails/webpacker": "4.2.2",
     "@tarekraafat/autocomplete.js": "^7.2.0",
     "bootstrap": "^4.4.1",
+    "countup.js": "^2.0.4",
     "fill-range": "^7.0.1",
     "gmaps": "^0.4.24",
     "jquery": "^3.4.1",
