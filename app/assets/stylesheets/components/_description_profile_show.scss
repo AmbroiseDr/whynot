@@ -16,7 +16,21 @@
   h6 {
     font-weight: 300;
   }
+
 }
+
+.mbti-display{
+  display: flex;
+  justify-content: center;
+}
+
+.mbti-as-btn {
+  color: #FF0E48;
+  border: 1px solid #FF0E48;
+  padding: 8px 18px;
+  border-radius: 50px;
+  }
+
 
 hr {
   border-color: #FF0E48;
