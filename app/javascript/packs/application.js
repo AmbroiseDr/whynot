@@ -16,3 +16,8 @@ scrollLastMessageIntoView();
 
 window.addEventListener("load",activateTagsOnLoad)
 
+import { stepsEdit } from '../components/steps_edit_profile';
+stepsEdit();
+
+import { smileySelection } from '../components/smiley_selection';
+smileySelection();
