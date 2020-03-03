@@ -11,21 +11,25 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
   const map = new GMaps({ el: '#map', lat: 0, lng: 0 });
   const markers = JSON.parse(oldMarkers);
   markers.push({
-    lat: 50.632492,
-    lng: 3.017299,
-    icon:'https://res.cloudinary.com/ambroise/image/upload/c_scale,w_22/v1582822068/logo_why_not_-_copie_zsernr.png'
+    lat: 48.8522428,
+    lng: 2.3393369,
+    icon:'https://res.cloudinary.com/ambroise/image/upload/c_scale,w_22/v1582822068/logo_why_not_-_copie_zsernr.png',
+    // animation: google.maps.Animation.DROP,
   });
-  map.addMarkers(markers);
+  markers.forEach((marker)=>{
+    marker.animation = google.maps.Animation.DROP
+    map.addMarkers([marker]);
+  })
+  // map.addMarkers(markers);
   if (markers.length === 0) {
     map.setZoom(2);
   } else if (markers.length === 1) {
-    map.setCenter(50.632492, 3.017299);
+    map.setCenter(48.8522428, 2.3393369);
     map.setZoom(14);
   } else {
-    map.setCenter(50.632492, 3.017299);
+    map.setCenter(48.8522428, 2.3393369);
     map.setZoom(14);
     // map.fitLatLngBounds(markers);
   }
 }
-
 
