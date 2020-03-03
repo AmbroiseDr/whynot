@@ -14,7 +14,7 @@
 
 .selection img {
   width:120px;
-  height: 120px;
+  height: 145px;
 }
 
 .selection div {
@@ -54,6 +54,7 @@
   border-radius: 50px;
   height: 40px;
   border: 1px solid rgba(255,14,72, 0.5);
+  width: 250px;
 }
 
 
@@ -68,7 +69,8 @@
   font-size:30px;
 }
 
-.user_description {
+#user_description {
+  width: 220px;
 
 }
 
@@ -121,3 +123,4 @@ input[type="file"] {
     column-gap: 105px;
     width: 180px;
 }
+

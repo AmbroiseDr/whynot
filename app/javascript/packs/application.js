@@ -21,3 +21,6 @@ stepsEdit();
 
 import { smileySelection } from '../components/smiley_selection';
 smileySelection();
+
+import { addGif } from '../components/gif_edit_profile';
+addGif();

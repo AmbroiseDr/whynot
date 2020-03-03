@@ -8,7 +8,7 @@
             <h2>Votre photo</h2>
           </div>
           <% if current_user.photo.attached? %>
-            <%= cl_image_tag current_user.photo.key, crop: :thumb %>
+            <%= cl_image_tag current_user.photo.key, width:"323", height:"323", crop: :thumb %>
           <% end %>
           <div class="d-flex justify-content-center mt-3">
             <label class="btn btn-warning mb-3 p-1 w-50 rounded-pill">
@@ -42,13 +42,15 @@
       <div class="step d-none">
         <h2>Description</h2>
         <div class="d-flex justify-content-center mt-3">
-          <%= f.input :description, input_html: { maxlength: 30 }, label: false %>
+          <%= f.input :description, input_html: { maxlength: 20 }, label: false, placeholder: "Max. 20 caractères" %>
         </div>
       </div>
 
       <div class="step d-none">
         <h2>Métier</h2>
-        <%= f.input :job, input_html: { maxlength: 50 }, label: false  %>
+        <div class="d-flex justify-content-center mt-3">
+          <%= f.input :job, input_html: { maxlength: 25 }, label: false, placeholder: "Max. 25 caractères"  %>
+        </div>
       </div>
 
       <div class="step d-none">
@@ -73,15 +75,16 @@
       </div>
 
       <div class="step d-none">
-        <h2>Les activités qui vous plaisent</h2>
+        <h2>Vos activités</h2>
         <%= render "tags" %>
         <%= f.input :form_tag_list, wrapper_html: {class: "d-none"} %>
       </div>
 
       <div class="step d-none">
-        <div class="d-flex justify-content-center flex-column align-items-center">
-          <%= f.button :submit, "Mettre à jour", class: "btn btn-warning p-2 w-50 rounded-pill" %>
-          <%= link_to "Annuler", profile_path %></h3>
+        <div class="final d-flex justify-content-center flex-column align-items-center">
+          <div id="giphy" data-api-giphy="<%= ENV['GIPHY_API_KEY'] %>" class="my-3"></div>
+          <%= f.button :submit, "Valider", class: "btn btn-warning p-2 w-50 rounded-pill mb-3" %>
+          <%= link_to "Annuler modifications", profile_path %></h3>
         </div>
       </div>
     <% end %>
