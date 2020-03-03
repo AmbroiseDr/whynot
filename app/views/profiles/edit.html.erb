@@ -7,9 +7,11 @@
           <div class="edit-image-content">
             <h2>Votre photo</h2>
           </div>
-          <% if current_user.photo.attached? %>
-            <%= cl_image_tag current_user.photo.key, width:"323", height:"323", crop: :thumb %>
-          <% end %>
+          <div class="d-flex justify-content-center mt-3">
+            <% if current_user.photo.attached? %>
+              <%= cl_image_tag current_user.photo.key, width:"323", height:"323", crop: :thumb %>
+            <% end %>
+          </div>
           <div class="d-flex justify-content-center mt-3">
             <label class="btn btn-warning mb-3 p-1 w-50 rounded-pill">
               <%= f.input :photo, as: :file, wrapper_html: {class: "d-none"} %>
@@ -27,14 +29,14 @@
         <div class="d-flex flex-column justify-content-center mt-3 align-items-center">
           <h3>Suggestions</h3>
           <div class="smileys mt-3">
-                <li>🔥</li>
-                <li>❤️</li>
-                <li>🤷</li>
-                <li>🦄</li>
-                <li>🤪</li>
-                <li>🤨</li>
-                <li>🤠</li>
-                <li>🤓</li>
+              <li>🔥</li>
+              <li>❤️</li>
+              <li>🤷</li>
+              <li>🦄</li>
+              <li>🤪</li>
+              <li>🤨</li>
+              <li>🤠</li>
+              <li>🤓</li>
           </div>
         </div>
       </div>
