@@ -12,10 +12,12 @@ const adaptCardSize = (counter) => {
       card.style.height = "500px";
       document.getElementById("suivant").style.visibility = "hidden"
     }else if(counter === 0){
-      card.style.height = "650px";
+      card.style.height = "620px";
       document.getElementById("precedent").style.visibility = "hidden"
-    }else{
+    }else if(counter === 5){
       card.style.height = "650px";
+    }else{
+      card.style.height = "620px";
       card.style.removeProperty('margin-top');
     }
   }

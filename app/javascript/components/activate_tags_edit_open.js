@@ -10,9 +10,6 @@ const activateTagsOnLoad = () => {
         document.getElementById('user_form_tag_list').value = document.getElementById('user_form_tag_list').value + "," + icon.dataset.value
       }
     })
-
-    tags.forEach(updateValueInput)
-
   }
 }
 
