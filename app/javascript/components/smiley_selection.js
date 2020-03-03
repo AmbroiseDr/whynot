@@ -1,13 +1,15 @@
 const smileySelection = () => {
+  const parentSmileys = document.querySelector('.smileys')
+  if (parentSmileys) {
+    const smileys = Array.from(parentSmileys.children)
 
-  const smileys = Array.from(document.querySelector('.smileys').children)
-
-  if (smileys){
-    smileys.forEach((smiley) => {
-      smiley.addEventListener("click", (event) => {
-        document.getElementById("user_smiley").value = event.currentTarget.innerHTML
+    if (smileys){
+      smileys.forEach((smiley) => {
+        smiley.addEventListener("click", (event) => {
+          document.getElementById("user_smiley").value = event.currentTarget.innerHTML
+        })
       })
-    })
+    }
   }
 }
 
