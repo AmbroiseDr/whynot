@@ -27,6 +27,7 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
     let infowindow = new google.maps.InfoWindow({
       content: "contentString"
     });
+    console.log(infowindow);
     google.maps.event.addListener(marker, 'click', function() {
         infowindow.open(map, marker);
     });
