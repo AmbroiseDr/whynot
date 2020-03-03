@@ -10,6 +10,7 @@
   <%end%>
   <div class="cards-matches">
     <% @matches.first(4).each do |match| %>
+      <%  %>
       <%= link_to match_path(match) do %>
        <%= render partial: "shared/card", locals:{match: match} %>
       <% end %>

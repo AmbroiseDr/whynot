@@ -21,3 +21,6 @@ stepsEdit();
 
 import { smileySelection } from '../components/smiley_selection';
 smileySelection();
+
+import { percentageAnimation } from '../components/percentage'
+window.addEventListener("load", percentageAnimation)
