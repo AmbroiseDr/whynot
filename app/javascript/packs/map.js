@@ -16,9 +16,13 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
     icon:'https://res.cloudinary.com/ambroise/image/upload/c_scale,w_22/v1582822068/logo_why_not_-_copie_zsernr.png',
     // animation: google.maps.Animation.DROP,
   });
+  let counter = 1;
   markers.forEach((marker)=>{
     marker.animation = google.maps.Animation.DROP
-    map.addMarkers([marker]);
+    counter = counter + 1
+    window.setTimeout(function() {
+      map.addMarkers([marker]);
+    }, 200 * counter);
   })
   // map.addMarkers(markers);
   if (markers.length === 0) {
