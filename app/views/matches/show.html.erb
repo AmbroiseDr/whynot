@@ -1,4 +1,5 @@
 <% user = @match %>
+<% common_activities = [] %>
 <div class="container">
   <div class="d-flex flex-column">
     <div class="show-image justify-content-center">
@@ -42,33 +43,10 @@
       <% if user.tag_list.nil? %>
         <% else %>
         <div class="cards-activities ml-5 mr-5 mt-3">
-          <%user.tag_list.each do |tag|%>
-            <div class="clickable">
-              <%if tag=="sport"  %>
-                <i class="fas fa-football-ball"></i>
-                <small>Sport</small>
-                <% elsif tag=="cooking"%>
-                <i class="fas fa-utensils"></i>
-                <small>Cours de cuisine</small>
-                <% elsif tag=="museum" %>
-                <i class="fas fa-paint-brush"></i>
-                <small>Exposition</small>
-                <% elsif tag=="music" %>
-                <i class="fas fa-music"></i>
-                <small>Concert</small>
-                <% elsif tag=="walk"%>
-                <i class="fas fa-tree"></i>
-                <small>Promenade</small>
-                <% elsif tag=="cofee" %>
-                <i class="fas fa-coffee"></i>
-                <small>Café</small>
-                <% elsif tag=="game"%>
-                <i class="fas fa-chess-knight"></i>
-                <small>Bar à jeux</small>
-                <% elsif tag=="escapes" %>
-                <i class="fas fa-search"></i>
-                <small>Escape game</small>
-              <%end %>
+          <% user.tag_list.each do |tag|%>
+            <div class="clickable <%= "active" if current_user.tag_list.include?(tag) %>">
+              <i class="fas <%= User::ICONS[tag] %>"></i>
+              <small><%= User::FRENCH_ACTIVITIES[tag.downcase]%></small>
             </div>
           <% end %>
         </div>
@@ -79,11 +57,4 @@
     <%= link_to "Contacter", user_messages_path(user.id), class:"btn btn-warning mb-3 pt-1 pb-1 w-50 rounded-pill btn-modifier" %>
   </div>
 </div>
-
-<%# if @user == @match %>
-<%# link_to "Modifier", edit_profile_path, class:"btn btn-warning" %>
-<%# else %>
-<%# link_to "Contacter  👥", user_messages_path(user.id), class:"btn btn-warning" %>
-<%# end %>
-
 

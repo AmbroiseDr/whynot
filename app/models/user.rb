@@ -1,4 +1,39 @@
 class User < ApplicationRecord
+
+  ACTIVITIES = [
+    'sport',
+    'cooking',
+    'museum',
+    'music',
+    'walk',
+    'cofee',
+    'game',
+    'escapes'
+  ]
+
+  FRENCH_ACTIVITIES = {
+    'sport'   => 'Sport',
+    'cooking' => 'Cours de cuisine',
+    'museum'  => 'Exposition',
+    'music'   => 'Concert',
+    'walk'    =>  'Promenade',
+    'cofee'   => 'Café',
+    'game'    => 'Bar à jeux',
+    'escape'  => 'Escape game',
+
+  }
+
+  ICONS = {
+    'sport'   => 'fa-football-ball',
+    'cooking' => 'fa-utensils',
+    'museum'  => 'fa-paint-brush',
+    'music'   => 'fa-music',
+    'walk'    =>  'fa-tree',
+    'cofee'   => 'fa-coffee',
+    'game'    => 'fa-chess-knight',
+    'escape'  => 'fa-search',
+  }
+
   attr_accessor :form_tag_list
   acts_as_taggable
   # Include default devise modules. Others available are:
@@ -130,6 +165,11 @@ class User < ApplicationRecord
   def find_25_matches
     self.matches(25)
   end
+
+  def tag_icon(tag_name)
+
+  end
+
 
   def matches(pourcentage)
     mbti_matchings = MATCHING_MBTI[self.mbti][pourcentage]
