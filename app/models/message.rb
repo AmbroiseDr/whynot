@@ -11,10 +11,17 @@ class Message < ApplicationRecord
 
     chat_room_id = self.sender.id * self.receiver.id
 
-    ActionCable.server.broadcast("chat_room_#{chat_room_id}", {
-      message: self.content,
-      sender: sender.id,
-      img: sender.photo.key
-    })
+    if self.sender.photo.attached?
+      ActionCable.server.broadcast("chat_room_#{chat_room_id}", {
+        message: self.content,
+        sender: sender.id,
+        img: sender.photo.key
+      })
+    else
+      ActionCable.server.broadcast("chat_room_#{chat_room_id}", {
+        message: self.content,
+        sender: sender.id,
+      })
+    end
   end
 end

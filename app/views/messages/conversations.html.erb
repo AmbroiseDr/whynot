@@ -1,6 +1,8 @@
 <div class="header-map">Conversations</div>
 <% if @users_with_conversation.empty? %>
-  <h3>Vous n'avez pas encore de conversation</p>
+  <div class="alert-primary text-center">
+    Vous n'avez pas encore de conversation
+  </div>
 <% else %>
   <div class="conversations">
     <% @users_with_conversation.each do |user| %>

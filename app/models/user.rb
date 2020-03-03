@@ -9,6 +9,7 @@ class User < ApplicationRecord
   has_many :questions, through: :answers
   belongs_to :profile_mbti
   has_one_attached :photo
+  validates :photo, presence: true
 
   MATCHING_MBTI = {
     "INFP" => {95 => ["ENFJ","ENTJ"],
