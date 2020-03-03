@@ -24,7 +24,8 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
   markers.forEach((marker) => {
     let infowindow = new google.maps.InfoWindow({
       content: `
-        <h1>${marker.name}</h1>
+        <h3>${marker.name}</h3>
+        <h4>${marker.rating}/5</h4>
         <a href="/matches/15">Profile</a>
       `
     });
