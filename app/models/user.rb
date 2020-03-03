@@ -111,6 +111,26 @@ class User < ApplicationRecord
     self.matches(95) + self.matches(80) + self.matches(65) + self.matches(40) + self.matches(25)
   end
 
+  def find_95_matches
+    self.matches(95)
+  end
+
+  def find_80_matches
+    self.matches(80)
+  end
+
+  def find_65_matches
+    self.matches(65)
+  end
+
+  def find_40_matches
+    self.matches(40)
+  end
+
+  def find_25_matches
+    self.matches(25)
+  end
+
   def matches(pourcentage)
     mbti_matchings = MATCHING_MBTI[self.mbti][pourcentage]
     return [] if mbti_matchings.nil?
