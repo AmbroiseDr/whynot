@@ -24,3 +24,10 @@ smileySelection();
 
 import { percentageAnimation } from '../components/percentage'
 window.addEventListener("load", percentageAnimation)
+
+import {fillRange} from '../components/fill_range';
+fillRange();
+
+import { addGif } from '../components/gif_edit_profile';
+addGif();
+

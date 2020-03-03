@@ -10,7 +10,6 @@
 .question-card .fa-question{
     color: #FF0E48;
     font-size: 100px;
-    opacity: 0.6;
     display: flex;
     justify-content: center;
   }
@@ -27,7 +26,7 @@
 .question-card .fa-thumbs-up {
   font-size: 50px;
   color: #FF0E48;
-  opacity: 0.6;
+  opacity: 0.5;
   padding: 16px;
 }
 
@@ -46,24 +45,60 @@
   justify-content: center;
 }
 
+
+
 .range_css{
   -webkit-appearance: none;
-  width:300px;
+  width:55vw;
   height:1rem;
-  background:linear-gradient(to bottom,#FB5607 10%,#f96007);
+  background:linear-gradient(to bottom,#FF0E48);
   border-radius:1.5rem;
   display: flex;
   justify-content: center;
-  margin: auto ;
+
 }
+
+.jauge_number{
+  margin: 16px;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.answer-with-jauge{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 16px 0 0 0 ;
+  p {
+    margin: 0;
+    font-style: italic;
+    font-weight: 100;
+  }
+}
+
+.answer-with-smileys{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 12px 0 12px;
+  .far {
+    font-size: 50px;
+    color: #FF0E48;
+    opacity: 0.5;
+  }
+}
+
+.answer-with-smileys .far:hover {
+    opacity: 1;
+  }
 
 
 
 .card-edit{
-  height: 680px;
+  height: 620px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 4px;
-  margin: 40px 10px;
+  margin: 25px 10px;
   background-color: white;
 }
 
@@ -98,3 +133,7 @@
   }
 }
 
+.final a {
+  text-decoration: underline rgba(255,14,72, 0.5);
+  color: rgba(255,14,72, 0.5);
+}

@@ -1,14 +1,27 @@
 <div class="container">
   <div class=question-card>
     <i class="fas fa-question pt-5"></i>
-    <p class="mt-4"><%=@question.content%></p>
-  <% if @question.type_question == "pouce" %>
-    <div class="answer-with-like">
-      <i class="far fa-thumbs-up up"></i>
-      <i class="far fa-thumbs-up down"></i>
-    </div>
-    <% elsif @question.type_question == "jauge" %>
-      <input type="range" class='range_css'>
+    <p class="mt-5 mb-4"><%=@question.content%></p>
+    <%if @question.type_question == "pouce" %>
+      <div class="answer-with-like">
+        <i class="far fa-thumbs-up up"></i>
+        <i class="far fa-thumbs-up down"></i>
+      </div>
+      <% elsif @question.type_question == "jauge" %>
+      <div class="answer-with-jauge">
+        <p>min</p>
+        <input type="range" class='range_css'>
+        <p>max</p>
+      </div>
+      <div class="jauge_number"></div>
+      <% elsif @question.type_question == "smileys" %>
+      <div class="answer-with-smileys pt-3">
+        <i class="far fa-sad-cry"></i>
+        <i class="far fa-frown-open"></i>
+        <i class="far fa-meh"></i>
+        <i class="far fa-grin"></i>
+        <i class="far fa-laugh-wink"></i>
+      </div>
     <%end %>
     <i class="fas fa-arrow-circle-right text-center mt-5"></i>
   </div>
