@@ -5,5 +5,16 @@
       <h4 class="age-matches"> <%= match.age %></h4>
       <h4 class="description-matches"> <%= match.description %></h4>
     </div>
-    <h4 class="percentage-matches">87%</h4>
+      <% if @find_95_matches.include?(match) %>
+        <% percentage = "95%" %>
+      <% elsif @find_80_matches.include?(match)%>
+        <% percentage = "80%" %>
+      <% elsif @find_65_matches.include?(match) %>
+        <% percentage = "65%" %>
+      <% elsif @find_40_matches.include?(match) %>
+        <% percentage = "40%"%>
+      <% else %>
+        <% percentage = "25%" %>
+      <% end %>
+    <h4 class="percentage-matches"> <%= percentage %> </h4>
 </div>

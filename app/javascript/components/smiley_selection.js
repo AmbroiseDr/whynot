@@ -12,5 +12,4 @@ const smileySelection = () => {
   }
 }
 
-
 export { smileySelection };

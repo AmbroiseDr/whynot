@@ -1,4 +1,39 @@
 class User < ApplicationRecord
+
+  ACTIVITIES = [
+    'sport',
+    'cooking',
+    'museum',
+    'music',
+    'walk',
+    'cofee',
+    'game',
+    'escapes'
+  ]
+
+  FRENCH_ACTIVITIES = {
+    'sport'   => 'Sport',
+    'cooking' => 'Cours de cuisine',
+    'museum'  => 'Exposition',
+    'music'   => 'Concert',
+    'walk'    =>  'Promenade',
+    'cofee'   => 'Café',
+    'game'    => 'Bar à jeux',
+    'escape'  => 'Escape game',
+
+  }
+
+  ICONS = {
+    'sport'   => 'fa-football-ball',
+    'cooking' => 'fa-utensils',
+    'museum'  => 'fa-paint-brush',
+    'music'   => 'fa-music',
+    'walk'    =>  'fa-tree',
+    'cofee'   => 'fa-coffee',
+    'game'    => 'fa-chess-knight',
+    'escape'  => 'fa-search',
+  }
+
   attr_accessor :form_tag_list
   acts_as_taggable
   # Include default devise modules. Others available are:
@@ -9,6 +44,7 @@ class User < ApplicationRecord
   has_many :questions, through: :answers
   belongs_to :profile_mbti
   has_one_attached :photo
+  validates :photo, presence: true
 
   MATCHING_MBTI = {
     "INFP" => {95 => ["ENFJ","ENTJ"],
@@ -110,6 +146,31 @@ class User < ApplicationRecord
   def find_all_matches
     self.matches(95) + self.matches(80) + self.matches(65) + self.matches(40) + self.matches(25)
   end
+
+  def find_95_matches
+    self.matches(95)
+  end
+
+  def find_80_matches
+    self.matches(80)
+  end
+
+  def find_65_matches
+    self.matches(65)
+  end
+
+  def find_40_matches
+    self.matches(40)
+  end
+
+  def find_25_matches
+    self.matches(25)
+  end
+
+  def tag_icon(tag_name)
+
+  end
+
 
   def matches(pourcentage)
     mbti_matchings = MATCHING_MBTI[self.mbti][pourcentage]
