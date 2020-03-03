@@ -1,14 +1,19 @@
 <div class="container">
   <div class=question-card>
     <i class="fas fa-question pt-5"></i>
-    <p class="mt-4"><%=@question.content%></p>
+    <p class="mt-5 mb-4"><%=@question.content%></p>
   <% if @question.type_question == "pouce" %>
     <div class="answer-with-like">
       <i class="far fa-thumbs-up up"></i>
       <i class="far fa-thumbs-up down"></i>
     </div>
     <% elsif @question.type_question == "jauge" %>
+    <div class="jauge">
+      <p>min</p>
       <input type="range" class='range_css'>
+      <p>max</p>
+    </div>
+    <div class="jauge_number"></div>
     <%end %>
     <i class="fas fa-arrow-circle-right text-center mt-5"></i>
   </div>

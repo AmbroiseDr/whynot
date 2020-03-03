@@ -21,3 +21,6 @@ stepsEdit();
 
 import { smileySelection } from '../components/smiley_selection';
 smileySelection();
+
+import {fillRange} from '../components/fill_range';
+fillRange();
