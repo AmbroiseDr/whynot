@@ -15,7 +15,11 @@
           <h6><%= current_user.age %> ANS</h6>
         <%end %>
       </div>
-       <div class="user-description mt-3">
+
+      <div class="mbti-display mt-1">
+        <p class="mbti-as-btn"><%= current_user.mbti %></p>
+      </div>
+      <div class="user-description mt-1">
         <p><%=current_user.profile_mbti.description%></p>
         <hr class="ml-3 mr-3 mt-1 mb-1">
       </div>
