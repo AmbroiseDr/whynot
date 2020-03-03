@@ -23,6 +23,11 @@
         <i class="far fa-laugh-wink"></i>
       </div>
     <%end %>
+
     <i class="fas fa-arrow-circle-right text-center mt-5"></i>
+
+    <%= simple_form_for(@answer) do %>
+      <%= f.input :value, label:false %>
+    <% end %>
   </div>
 </div>

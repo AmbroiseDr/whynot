@@ -29,3 +29,9 @@ fillRange();
 import { addGif } from '../components/gif_edit_profile';
 addGif();
 
+import { selectSmileyAnswer } from '../components/smiley_question';
+selectSmileyAnswer();
+
+import { selectLike } from '../components/like_question';
+selectLike();
+
