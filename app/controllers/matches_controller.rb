@@ -13,6 +13,11 @@ class MatchesController < ApplicationController
     @user = current_user
     match_id = params[:id].to_i
     @match = User.find(match_id)
+    @find_95_matches = find_95_matches
+    @find_80_matches = find_80_matches
+    @find_65_matches = find_65_matches
+    @find_40_matches = find_40_matches
+    @find_25_matches = find_25_matches
   end
 
   def find_matches
