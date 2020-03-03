@@ -10,7 +10,6 @@
 .question-card .fa-question{
     color: #FF0E48;
     font-size: 100px;
-    opacity: 0.6;
     display: flex;
     justify-content: center;
   }
@@ -46,18 +45,36 @@
   justify-content: center;
 }
 
+
+
 .range_css{
   -webkit-appearance: none;
-  width:300px;
+  width:55vw;
   height:1rem;
-  background:linear-gradient(to bottom,#FB5607 10%,#f96007);
+  background:linear-gradient(to bottom,#FF0E48);
   border-radius:1.5rem;
   display: flex;
   justify-content: center;
-  margin: auto ;
+
 }
 
+.jauge_number{
+  margin: 16px;
+  font-size: 24px;
+  font-weight: 500;
+}
 
+.jauge{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 16px 0 0 0 ;
+  p {
+    margin: 0;
+    font-style: italic;
+    font-weight: 100;
+  }
+}
 
 .card-edit{
   height: 680px;

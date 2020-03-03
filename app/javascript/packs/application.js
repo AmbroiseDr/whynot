@@ -22,5 +22,10 @@ stepsEdit();
 import { smileySelection } from '../components/smiley_selection';
 smileySelection();
 
+
+import {fillRange} from '../components/fill_range';
+fillRange();
+
 import { addGif } from '../components/gif_edit_profile';
 addGif();
+
