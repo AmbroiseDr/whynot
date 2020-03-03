@@ -6,6 +6,8 @@ const mapElement = document.getElementById('map');
   //   console.log(data.coordinates)
   // });
 
+
+
 if (mapElement) { // don't try to build a map if there's no div#map to inject in
   const oldMarkers = mapElement.dataset.markers
   const map = new GMaps({ el: '#map', lat: 0, lng: 0 });
@@ -14,7 +16,6 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
     lat: 48.8522428,
     lng: 2.3393369,
     icon:'https://res.cloudinary.com/ambroise/image/upload/c_scale,w_22/v1582822068/logo_why_not_-_copie_zsernr.png',
-    // animation: google.maps.Animation.DROP,
   });
   let counter = 1;
   markers.forEach((marker)=>{
@@ -23,8 +24,14 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
     window.setTimeout(function() {
       map.addMarkers([marker]);
     }, 200 * counter);
+    let infowindow = new google.maps.InfoWindow({
+      content: "contentString"
+    });
+    google.maps.event.addListener(marker, 'click', function() {
+        infowindow.open(map, marker);
+    });
   })
-  // map.addMarkers(markers);
+
   if (markers.length === 0) {
     map.setZoom(2);
   } else if (markers.length === 1) {
