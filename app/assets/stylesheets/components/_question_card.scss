@@ -23,16 +23,20 @@
   justify-content: center;
 }
 
-.question-card .fa-thumbs-up {
+
+
+.answer-with-like i{
   font-size: 50px;
   color: #FF0E48;
   opacity: 0.5;
   padding: 16px;
 }
 
-.fa-thumbs-up:hover {
+.answer-with-like i{
+  &.active {
     opacity: 1;
   }
+}
 
 .question-card .down {
     transform: rotate(180deg);
@@ -81,16 +85,18 @@
   justify-content: space-around;
   align-items: center;
   margin: 0 12px 0 12px;
-  .far {
+  i {
     font-size: 50px;
     color: #FF0E48;
     opacity: 0.5;
   }
 }
 
-.answer-with-smileys .far:hover {
+.answer-with-smileys i{
+  &.active{
     opacity: 1;
   }
+}
 
 
 
