@@ -22,13 +22,20 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
 
 
   markers.forEach((marker) => {
+    let content_info = `
+        <p><strong>${marker.name}</strong><p>
+        <p>${marker.rating}/5</p>
+        <div class="places_photos">`
+    marker.users_match.forEach((match) => {
+      let to_add_html = `
+      <a href="/matches/${match.user_id}"><img src="http://res.cloudinary.com/duv3g4cfp/image/upload/c_thumb/${match.user_photo_key}"></a>
+      `
+        content_info = content_info + to_add_html
+    });
+    content_info = content_info + "</div>"
     console.log(marker.users_match)
     let infowindow = new google.maps.InfoWindow({
-      content: `
-        <h3>${marker.name}</h3>
-        <h4>${marker.rating}/5</h4>
-        <a href="/matches/15">Profile</a>
-      `
+      content: content_info
     });
     window.setTimeout(function() {
       const newMarker = new google.maps.Marker({position: marker, icon: marker.icon, map: map, title: "test",animation: google.maps.Animation.DROP});

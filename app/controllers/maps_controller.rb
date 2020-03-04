@@ -35,8 +35,8 @@ class MapsController < ApplicationController
               hash_info = {
                 "user_id" => user_match.id,
                 "user_name" => user_match.name,
-                # "user_photo_key" => user_match.photo.key
               }
+              hash_info["user_photo_key"] = user_match.photo.key if user_match.photo.attached?
               to_add["users_match"] << hash_info
               to_add["icon"] = "http://maps.google.com/mapfiles/kml/paddle/orange-stars.png"
             end
