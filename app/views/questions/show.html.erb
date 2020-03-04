@@ -8,12 +8,10 @@
         <i class="far fa-thumbs-up down" data-value=1></i>
       </div>
       <% elsif @question.type_question == "jauge" %>
-      <div class="answer-with-jauge d-flex flex-column w-100">
+      <div class="answer-with-jauge d-flex">
+        <i class="fas fa-minus"></i>
         <input type="range" class='range_css'>
-        <div class="d-flex justify-content-between ">
-          <div>pas du tout</div>
-          <div>totalement</div>
-        </div>
+        <i class="fas fa-plus"></i>
       </div>
       <div class="jauge_number"></div>
       <% elsif @question.type_question == "smileys" %>
@@ -25,7 +23,6 @@
         <i class="far fa-laugh-wink" data-value=4></i>
       </div>
     <%end %>
-
 
 
     <%= simple_form_for([@question,@answer]) do |f| %>

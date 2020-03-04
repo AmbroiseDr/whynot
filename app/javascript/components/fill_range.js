@@ -6,11 +6,9 @@ const fillRange = () => {
   if (jauge){
     inputField.value = 50
     jauge.addEventListener('change',()=>{
-      placeholderValueJauge.innerHTML = `<p>${event.currentTarget.value}</p>`
       inputField.value = jauge.value
     })
   }
-
 }
 
 export {fillRange};
