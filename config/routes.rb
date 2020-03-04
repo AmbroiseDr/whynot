@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'answers/create'
   # mount ActionCable.server => "/cable"
   get 'messages/conversations'
   get 'messages/index'

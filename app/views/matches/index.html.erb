@@ -3,11 +3,17 @@
     <div class = "logo"><%= cl_image_tag("llpfrsdiwc27yqhw6j0v", width: 50, height: 40, crop: :fill) %></div>
     <i class="fas fa-cog"></i>
   </div>
-  <%= link_to question_path(1) do%>
+  <% if current_user.questions_not_answered.size != 0 %>
+    <%= link_to question_path(current_user.questions_not_answered.sample) do %>
+      <div class="reload-btn">
+        <i class="fas fa-sync-alt"></i>
+      </div>
+    <%end%>
+  <% else %>
     <div class="reload-btn">
       <i class="fas fa-sync-alt"></i>
     </div>
-  <%end%>
+  <% end %>
   <div class="cards-matches">
     <% @matches.first(4).each do |match| %>
       <%= link_to match_path(match) do %>
