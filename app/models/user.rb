@@ -183,4 +183,9 @@ class User < ApplicationRecord
     end
     return matches
   end
+
+  def answered!
+    self.answered = true
+    self.save
+  end
 end
