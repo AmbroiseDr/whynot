@@ -14,6 +14,7 @@ class MapsController < ApplicationController
     'escape'  => 'Escape game',
     }
     @user = current_user
+    matches = find_matches.first(4)
     tags = @user.tag_list
     @markers=[]
     tags.each do |tag|
@@ -27,9 +28,26 @@ class MapsController < ApplicationController
           to_add["name"] = marker["name"]
           to_add["icon"] = marker["icon"]
           to_add["rating"] = marker["rating"]
+          to_add["users_match"] = []
+          to_add["icon"] = marker["icon"]
+          matches.each do |user_match|
+            if user_match.tag_list.include?(tag)
+              hash_info = {
+                "user_id" => user_match.id,
+                "user_name" => user_match.name,
+                # "user_photo_key" => user_match.photo.key
+              }
+              to_add["users_match"] << hash_info
+              to_add["icon"] = "http://maps.google.com/mapfiles/kml/paddle/orange-stars.png"
+            end
+          end
           @markers.push(to_add)
         end
       end
     end
+  end
+
+  def find_matches
+    current_user.find_all_matches
   end
 end
