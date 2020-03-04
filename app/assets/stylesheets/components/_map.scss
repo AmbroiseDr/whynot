@@ -23,3 +23,27 @@
   border:solid 4px rgba(255,14,72,0.5);
   margin-right:5px;
 }
+
+.gm-style .gm-style-iw-c{
+  box-shadow: 0 0 15px rgba(255,14,72,0.2);
+}
+
+.place_name{
+  font-weight:600;
+  margin:0;
+}
+
+.place_rating{
+  margin:0;
+}
+
+.place_type {
+  background-color:rgba(255,14,72,0.8);
+  border-radius:10px;
+  font-weight:600;
+  color:white;
+  display:inline-block;
+  padding:2px;
+  margin:0;
+}
+
