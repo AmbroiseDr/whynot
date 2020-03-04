@@ -11,7 +11,7 @@ class MapsController < ApplicationController
     'walk'    =>  'Promenade',
     'cofee'   => 'Coffe',
     'game'    => 'Bar a jeux',
-    'escape'  => 'Escape game',
+    'escapes'  => 'Escape game',
     }
     @user = current_user
     matches = find_matches.first(4)
@@ -28,6 +28,7 @@ class MapsController < ApplicationController
           to_add["name"] = marker["name"]
           to_add["icon"] = marker["icon"]
           to_add["rating"] = marker["rating"]
+          to_add["type"] = translation[tag]
           to_add["users_match"] = []
           to_add["icon"] = marker["icon"]
           matches.each do |user_match|
