@@ -171,6 +171,16 @@ class User < ApplicationRecord
 
   end
 
+  def questions_not_answered
+    questions = Question.all
+    questions_answered = []
+    answers = self.answers
+    answers.each do |answer|
+      questions_answered << answer.question
+    end
+    questions - questions_answered
+  end
+
 
   def matches(pourcentage)
     mbti_matchings = MATCHING_MBTI[self.mbti][pourcentage]

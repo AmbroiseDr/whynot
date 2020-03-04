@@ -4,8 +4,8 @@
     <p class="mt-5 mb-4"><%=@question.content%></p>
     <%if @question.type_question == "pouce" %>
       <div class="answer-with-like">
-        <i class="far fa-thumbs-up up"></i>
-        <i class="far fa-thumbs-up down"></i>
+        <i class="far fa-thumbs-up up" data-value=-1></i>
+        <i class="far fa-thumbs-up down" data-value=1></i>
       </div>
       <% elsif @question.type_question == "jauge" %>
       <div class="answer-with-jauge">
@@ -16,13 +16,23 @@
       <div class="jauge_number"></div>
       <% elsif @question.type_question == "smileys" %>
       <div class="answer-with-smileys pt-3">
-        <i class="far fa-sad-cry"></i>
-        <i class="far fa-frown-open"></i>
-        <i class="far fa-meh"></i>
-        <i class="far fa-grin"></i>
-        <i class="far fa-laugh-wink"></i>
+        <i class="far fa-sad-cry" data-value=0 ></i>
+        <i class="far fa-frown-open" data-value=1 ></i>
+        <i class="far fa-meh" data-value=2 ></i>
+        <i class="far fa-grin" data-value=3 ></i>
+        <i class="far fa-laugh-wink" data-value=4></i>
       </div>
     <%end %>
-    <i class="fas fa-arrow-circle-right text-center mt-5"></i>
+
+
+
+    <%= simple_form_for([@question,@answer]) do |f| %>
+      <%= f.input :value, label:false, wrapper_html: {class: "d-none"} %>
+      <div class="mt-5 d-flex justify-content-center">
+        <%= f.button :button do %>
+          <i class="fas fa-arrow-circle-right text-center"></i>
+        <% end %>
+      </div>
+    <% end %>
   </div>
 </div>

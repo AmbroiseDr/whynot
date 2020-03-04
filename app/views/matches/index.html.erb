@@ -5,11 +5,17 @@
     <i class="fas fa-cog"></i>
     <%end %>
   </div>
-  <%= link_to question_path(1) do%>
+  <% if current_user.questions_not_answered.size != 0 %>
+    <%= link_to question_path(current_user.questions_not_answered.sample) do %>
+      <div class="reload-btn">
+        <i class="fas fa-sync-alt"></i>
+      </div>
+    <%end%>
+  <% else %>
     <div class="reload-btn">
       <i class="fas fa-sync-alt"></i>
     </div>
-  <%end%>
+  <% end %>
   <div class="cards-matches">
     <% @matches.first(4).each do |match| %>
       <%= link_to match_path(match) do %>
