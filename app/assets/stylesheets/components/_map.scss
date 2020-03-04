@@ -10,3 +10,16 @@
   color:white;
   font-weight:800;
 }
+
+.places_photos{
+  display:flex;
+}
+
+.places_photos img {
+  height: 60px;
+  width: 60px;
+  object-fit: cover;
+  border-radius:50%;
+  border:solid 4px rgba(255,14,72,0.5);
+  margin-right:5px;
+}
