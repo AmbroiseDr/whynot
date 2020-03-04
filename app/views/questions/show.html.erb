@@ -1,7 +1,7 @@
 <div class="container">
   <div class=question-card>
     <i class="fas fa-question pt-5"></i>
-    <p class="mt-5 mb-4"><%=@question.content%></p>
+    <p class="mt-5 mb-4 p-3"><%=@question.content%></p>
     <%if @question.type_question == "pouce" %>
       <div class="answer-with-like">
         <i class="far fa-thumbs-up up" data-value=-1></i>
