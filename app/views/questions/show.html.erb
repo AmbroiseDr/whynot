@@ -8,10 +8,12 @@
         <i class="far fa-thumbs-up down" data-value=1></i>
       </div>
       <% elsif @question.type_question == "jauge" %>
-      <div class="answer-with-jauge">
-        <p>min</p>
+      <div class="answer-with-jauge d-flex flex-column w-100">
         <input type="range" class='range_css'>
-        <p>max</p>
+        <div class="d-flex justify-content-between ">
+          <div>pas du tout</div>
+          <div>totalement</div>
+        </div>
       </div>
       <div class="jauge_number"></div>
       <% elsif @question.type_question == "smileys" %>
