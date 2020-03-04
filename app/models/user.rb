@@ -47,84 +47,84 @@ class User < ApplicationRecord
   validates :photo, presence: true
 
   MATCHING_MBTI = {
-    "INFP" => {95 => ["ENFJ","ENTJ"],
-               80 => ["INFP","ENFP","INFJ","INTJ","INTP","ENTP"],
-               25 => ["ISFP","ESFP","ISTP","ESTP","ISFJ","EFSJ","ISTJ","ESTJ"],
+    "INFP" => {85 => ["ENFJ","ENTJ"],
+               70 => ["INFP","ENFP","INFJ","INTJ","INTP","ENTP"],
+               15 => ["ISFP","ESFP","ISTP","ESTP","ISFJ","EFSJ","ISTJ","ESTJ"],
               },
-    "ENFP" => {95 => ["INFJ", "INTJ"],
-               80 => ["INFP","ENPF","ENFJ","ENTJ","INTP","ENTP"],
-               25 => ["ISFP", "ESFP", "ISTP","ESTP","ISFJ","ESFJ","ISTJ","ESTJ"],
+    "ENFP" => {85 => ["INFJ", "INTJ"],
+               70 => ["INFP","ENPF","ENFJ","ENTJ","INTP","ENTP"],
+               15 => ["ISFP", "ESFP", "ISTP","ESTP","ISFJ","ESFJ","ISTJ","ESTJ"],
               },
-    "INFJ" => {95 => ["ENFP","ENTP"],
-               80 => ["INFP","INFJ","ENFJ","INTJ","ENTJ","INTP"],
-               25 => ["ISFP", "ESFP", "ISTP","ESTP","ISFJ","ESFJ","ISTJ","ESTJ"],
+    "INFJ" => {85 => ["ENFP","ENTP"],
+               70 => ["INFP","INFJ","ENFJ","INTJ","ENTJ","INTP"],
+               15 => ["ISFP", "ESFP", "ISTP","ESTP","ISFJ","ESFJ","ISTJ","ESTJ"],
               },
-    "ENFJ" => {95 => ["INFP","ISFP"],
-               80 => ["ENFP","INFJ","ENFJ","INTJ","ENTJ","INTP","ENTP"],
-               25 => ["ESFP", "ISTP","ESTP","ISFJ","ESFJ","ISTJ","ESTJ"],
+    "ENFJ" => {85 => ["INFP","ISFP"],
+               70 => ["ENFP","INFJ","ENFJ","INTJ","ENTJ","INTP","ENTP"],
+               15 => ["ESFP", "ISTP","ESTP","ISFJ","ESFJ","ISTJ","ESTJ"],
               },
-    "INTJ" => {95 => ["ENFP","ENTP"],
-               80 => ["INFP","INFJ","ENFJ","INTJ","ENTJ","INTP"],
-               65 => ["ISFP", "ESFP", "ISTP","ESTP"],
-               40 => ["ISFJ","ESFJ","ISTJ","ESTJ"],
+    "INTJ" => {85 => ["ENFP","ENTP"],
+               70 => ["INFP","INFJ","ENFJ","INTJ","ENTJ","INTP"],
+               55 => ["ISFP", "ESFP", "ISTP","ESTP"],
+               30 => ["ISFJ","ESFJ","ISTJ","ESTJ"],
               },
-    "ENTJ" => {95 => ["INFP","INTP"],
-               80 => ["ENFP","INFJ","ENFJ","INTJ","ENTJ","ENTP"],
-               65 => ["ISFP","ESFP","ISTP","ESTP","ISFJ","EFSJ","ISTJ","ESTJ"],
+    "ENTJ" => {85 => ["INFP","INTP"],
+               70 => ["ENFP","INFJ","ENFJ","INTJ","ENTJ","ENTP"],
+               55 => ["ISFP","ESFP","ISTP","ESTP","ISFJ","EFSJ","ISTJ","ESTJ"],
               },
-    "INTP" => {95 => ["ENTJ","ESTJ"],
-               80 => ["INFP","ENFP","INFJ","ENFJ","INTJ","INTP","ENTP"],
-               65 => ["ISFP", "ESFP", "ISTP","ESTP"],
-               40 => ["ISFJ","ESFJ","ISTJ"],
+    "INTP" => {85 => ["ENTJ","ESTJ"],
+               70 => ["INFP","ENFP","INFJ","ENFJ","INTJ","INTP","ENTP"],
+               55 => ["ISFP", "ESFP", "ISTP","ESTP"],
+               30 => ["ISFJ","ESFJ","ISTJ"],
               },
-    "ENTP" => {95 => ["INFJ", "INTJ"],
-               80 => ["INFP","ENPF","ENFJ","ENTJ","INTP","ENTP"],
-               65 => ["ISFP", "ESFP", "ISTP","ESTP"],
-               40 => ["ISFJ","ESFJ","ISTJ","ESTJ"],
+    "ENTP" => {85 => ["INFJ", "INTJ"],
+               70 => ["INFP","ENPF","ENFJ","ENTJ","INTP","ENTP"],
+               55 => ["ISFP", "ESFP", "ISTP","ESTP"],
+               30 => ["ISFJ","ESFJ","ISTJ","ESTJ"],
               },
-    "ISFP" => {95 => ["ENFJ","ESFJ","ESTJ"],
-               65 => ["INTJ", "ENTJ","INTP","ENTP","ISFJ","ISTJ"],
-               40 => ["ISFP", "ESFP", "ISTP","ESTP"],
-               25 => ["INFP","ENFP","INFJ"],
+    "ISFP" => {85 => ["ENFJ","ESFJ","ESTJ"],
+               55 => ["INTJ", "ENTJ","INTP","ENTP","ISFJ","ISTJ"],
+               30 => ["ISFP", "ESFP", "ISTP","ESTP"],
+               15 => ["INFP","ENFP","INFJ"],
               },
-    "ESFP" => {95 => ["ISFJ","ISTJ"],
-               65 => ["INTJ", "ENTJ","INTP","ENTP","ESFJ","ESTJ"],
-               40 => ["ISFP", "ESFP", "ISTP","ESTP"],
-               25 => ["INFP","ENFP","INFJ","ENFJ"],
+    "ESFP" => {85 => ["ISFJ","ISTJ"],
+               55 => ["INTJ", "ENTJ","INTP","ENTP","ESFJ","ESTJ"],
+               30 => ["ISFP", "ESFP", "ISTP","ESTP"],
+               15 => ["INFP","ENFP","INFJ","ENFJ"],
               },
-    "ISTP" => {95 => ["ESFJ","ESTJ"],
-               65 => ["INTJ", "ENTJ","INTP","ENTP","ISFJ","ISTJ"],
-               40 => ["ISFP", "ESFP", "ISTP","ESTP"],
-               25 => ["INFP","ENFP","INFJ","ENFJ"],
+    "ISTP" => {85 => ["ESFJ","ESTJ"],
+               55 => ["INTJ", "ENTJ","INTP","ENTP","ISFJ","ISTJ"],
+               30 => ["ISFP", "ESFP", "ISTP","ESTP"],
+               15 => ["INFP","ENFP","INFJ","ENFJ"],
               },
-    "ESTP" => {95 => ["ISFJ","ISTJ"],
-               65 => ["INTJ", "ENTJ","INTP","ENTP","ESFJ","ESTJ"],
-               40 => ["ISFP", "ESFP", "ISTP","ESTP"],
-               25 => ["INFP","ENFP","INFJ","ENFJ"],
+    "ESTP" => {85 => ["ISFJ","ISTJ"],
+               55 => ["INTJ", "ENTJ","INTP","ENTP","ESFJ","ESTJ"],
+               30 => ["ISFP", "ESFP", "ISTP","ESTP"],
+               15 => ["INFP","ENFP","INFJ","ENFJ"],
               },
-    "ISFJ" => {95 => ["ESFP","ESTP"],
-               80 => ["ISFJ","EFSJ","ISTJ","ESTJ"],
-               65 => ["ENTJ","ISFP","ISTP"],
-               40 => ["INTJ","INTP","ENTP"],
-               25 => ["INFP","ENFP","INFJ","ENFJ"],
+    "ISFJ" => {85 => ["ESFP","ESTP"],
+               70 => ["ISFJ","EFSJ","ISTJ","ESTJ"],
+               55 => ["ENTJ","ISFP","ISTP"],
+               30 => ["INTJ","INTP","ENTP"],
+               15 => ["INFP","ENFP","INFJ","ENFJ"],
               },
-    "ESFJ" => {95 => ["ISFP","ISTP"],
-               80 => ["ISFJ","EFSJ","ISTJ","ESTJ"],
-               65 => ["ESFP","ESTP"],
-               40 => ["INTJ","INTP","ENTP"],
-               25 => ["INFP","ENFP","INFJ","ENFJ"],
+    "ESFJ" => {85 => ["ISFP","ISTP"],
+               70 => ["ISFJ","EFSJ","ISTJ","ESTJ"],
+               55 => ["ESFP","ESTP"],
+               30 => ["INTJ","INTP","ENTP"],
+               15 => ["INFP","ENFP","INFJ","ENFJ"],
               },
-    "ISTJ" => {95 => ["ESFP","ESTP"],
-               80 => ["ISFJ","EFSJ","ISTJ","ESTJ"],
-               65 => ["ENTJ","ISFP","ISTP"],
-               40 => ["INTJ","INTP","ENTP"],
-               25 => ["INFP","ENFP","INFJ","ENFJ"],
+    "ISTJ" => {85 => ["ESFP","ESTP"],
+               70 => ["ISFJ","EFSJ","ISTJ","ESTJ"],
+               55 => ["ENTJ","ISFP","ISTP"],
+               30 => ["INTJ","INTP","ENTP"],
+               15 => ["INFP","ENFP","INFJ","ENFJ"],
               },
-    "ESTJ" => {95 => ["INTP","ISFP","ISTP"],
-               80 => ["ISFJ","EFSJ","ISTJ","ESTJ"],
-               65 => ["ESFP","ESTP"],
-               40 => ["INTJ","ENTP"],
-               25 => ["INFP","ENFP","INFJ","ENFJ"],
+    "ESTJ" => {85 => ["INTP","ISFP","ISTP"],
+               70 => ["ISFJ","EFSJ","ISTJ","ESTJ"],
+               55 => ["ESFP","ESTP"],
+               30 => ["INTJ","ENTP"],
+               15 => ["INFP","ENFP","INFJ","ENFJ"],
               },
   }
 
@@ -144,27 +144,27 @@ class User < ApplicationRecord
   end
 
   def find_all_matches
-    self.matches(95) + self.matches(80) + self.matches(65) + self.matches(40) + self.matches(25)
+    self.matches(85) + self.matches(70) + self.matches(55) + self.matches(30) + self.matches(15)
   end
 
-  def find_95_matches
-    self.matches(95)
+  def find_85_matches
+    self.matches(85)
   end
 
-  def find_80_matches
-    self.matches(80)
+  def find_70_matches
+    self.matches(70)
   end
 
-  def find_65_matches
-    self.matches(65)
+  def find_55_matches
+    self.matches(55)
   end
 
-  def find_40_matches
-    self.matches(40)
+  def find_30_matches
+    self.matches(30)
   end
 
-  def find_25_matches
-    self.matches(25)
+  def find_15_matches
+    self.matches(15)
   end
 
   def tag_icon(tag_name)
