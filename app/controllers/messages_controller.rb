@@ -1,5 +1,7 @@
 require 'json'
 require 'open-uri'
+require 'icalendar'
+require 'date'
 
 class MessagesController < ApplicationController
   def conversations
@@ -14,6 +16,32 @@ class MessagesController < ApplicationController
     @friend   = User.find(params[:user_id])
     @reco_info = recos(current_user, @friend)
     @chat_room_id = current_user.id * @friend.id
+
+    cal = Icalendar::Calendar.new
+    filename = "Foo at #{@friend.name}"
+
+    if params[:format] == 'vcs'
+      cal.prodid = '-//Microsoft Corporation//Outlook MIMEDIR//EN'
+      cal.version = '1.0'
+      filename += '.vcs'
+    else # ical
+      cal.prodid = '-//Acme Widgets, Inc.//NONSGML ExportToCalendar//EN'
+      cal.version = '2.0'
+      filename += '.ics'
+    end
+    @date = DateTime.new(2001,2,3,4,5,6)
+    raise
+
+    cal.event do |e|
+      e.dtstart     = Icalendar::Values::DateTime.new(2001,2,3,4,5,6)
+      e.dtend       = Icalendar::Values::DateTime.new(2001,2,3,4,5,6)
+      e.summary     = "foo summary"
+      e.description = "foo.description"
+      e.url         = "event_url(foo)"
+      e.location    = "foo.formatted_address"
+    end
+
+    send_data cal.to_ical, type: 'text/calendar', disposition: 'attachment', filename: filename
   end
 
   def create

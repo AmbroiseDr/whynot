@@ -86,6 +86,9 @@ GEM
       domain_name (~> 0.5)
     i18n (1.8.2)
       concurrent-ruby (~> 1.0)
+    icalendar (2.6.1)
+      ice_cube (~> 0.16)
+    ice_cube (0.16.3)
     jbuilder (2.10.0)
       activesupport (>= 5.0.0)
     listen (3.0.8)
@@ -225,6 +228,7 @@ DEPENDENCIES
   dotenv-rails
   font-awesome-sass (~> 5.6.1)
   geocoder
+  icalendar
   jbuilder (~> 2.0)
   listen (~> 3.0.5)
   pg (~> 0.21)
