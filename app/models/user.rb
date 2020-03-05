@@ -141,7 +141,7 @@ class User < ApplicationRecord
     conversation.sort_by { |message| message.created_at }
   end
 
-  def messages_viewed
+  def messages_unviewed
     Message.where(receiver:self, viewed: false).count
   end
 

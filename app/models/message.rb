@@ -6,9 +6,9 @@ class Message < ApplicationRecord
 
 
   after_create :broadcast_message
+  after_create :broadcast_notification
 
   def broadcast_message
-
     chat_room_id = self.sender.id * self.receiver.id
 
     if self.sender.photo.attached?
@@ -24,4 +24,13 @@ class Message < ApplicationRecord
       })
     end
   end
+
+  def broadcast_notification
+
+    receiver_id = self.receiver.id
+    ActionCable.server.broadcast("notification_#{receiver_id}", {
+        sender_id: self.sender.id
+    })
+  end
+
 end
