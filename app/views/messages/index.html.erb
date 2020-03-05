@@ -6,7 +6,7 @@
   <% end %>
 <div class="messages">
   <ul>
-    <% unless @reco_info.empty? %>
+    <% unless @reco_info.nil? %>
       <div class="talk-bubble-reco">
         <li class= "reco-message"><p class ="text-message-reco">Bonjour <%= @current_user.name %> et <%= @friend.name %>,
           bienvenue dans ce qui s'annonce être une merveilleuse aventure 🍾! Vous aimez tous les deux <%= @reco_info["type"] %> !

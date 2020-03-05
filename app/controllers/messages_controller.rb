@@ -1,3 +1,6 @@
+require 'json'
+require 'open-uri'
+
 class MessagesController < ApplicationController
   def conversations
     @users_with_conversation = current_user.friends
@@ -56,10 +59,11 @@ class MessagesController < ApplicationController
             to_add["name"] = marker["name"]
             to_add["rating"] = marker["rating"]
             to_add["type"] = translation[tag][1]
-            return to_add
+            markers.push(to_add)
           end
         end
       end
     end
+    return markers.sample
   end
 end
