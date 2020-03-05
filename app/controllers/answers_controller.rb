@@ -23,13 +23,15 @@ class AnswersController < ApplicationController
   end
 
   def find_user_answers
-    @answers = Answer.all.find_all { |i| i.user_id == current_user.id }
+    @answers = current_user.answers
   end
 
   def normalize_answers
     if @question.type_question == "smileys" && @answer.value > 2
       @answer.value = 1
     elsif @question.type_question == "jauge" && @answer.value > 50
+      @answer.value = 1
+    elsif @question.type_question == "pouce" && @answer.value > 0
       @answer.value = 1
     else
       @answer.value = -1
@@ -53,9 +55,7 @@ class AnswersController < ApplicationController
   def scoring_answer
     @scoring_answer = Hash.new(0)
     @answers.each do |answer|
-      @letters.each do |letter|
-        @scoring_answer[letter] += answer.value
-      end
+      @scoring_answer[answer.question.letter_position] += answer.value
     end
     @scoring_answer
   end
