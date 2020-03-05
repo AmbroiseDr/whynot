@@ -37,3 +37,5 @@ selectSmileyAnswer();
 import { selectLike } from '../components/like_question';
 selectLike();
 
+import { AnimateJauge } from '../components/jauge';
+AnimateJauge();
