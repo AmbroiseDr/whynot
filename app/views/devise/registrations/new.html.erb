@@ -10,12 +10,16 @@
 
 
       <div class="step mb-3">
-        <div class="d-flex justify-content-center mt-1">
+        <div class="d-flex mt-1 flex-column justify-content-center align-items-center">
           <%= f.input :name,
                       required: true,
                       input_html: { autocomplete: "name" },
                       placeholder: "Ton prénom",
                       label:false %>
+          <%= f.input :age,
+                      required:true,
+                      label:false,
+                      placeholder: "Ton âge" %>
         </div>
 
         <h2>Ton profil MBTI</h2>
@@ -29,10 +33,6 @@
                     required: true,
                     wrapper_html: {class: "d-none"}%>
 
-        <%#= f.input :age,
-                    required:true,
-                    label:false,
-                    placeholder: "Age" %>
 
       </div>
 
