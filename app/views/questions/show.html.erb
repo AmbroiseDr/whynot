@@ -1,17 +1,17 @@
 <div class="container">
   <div class=question-card>
     <i class="fas fa-question pt-5"></i>
-    <p class="mt-5 mb-4"><%=@question.content%></p>
+    <p class="mt-5 mb-4 p-3"><%=@question.content%></p>
     <%if @question.type_question == "pouce" %>
       <div class="answer-with-like">
         <i class="far fa-thumbs-up up" data-value=-1></i>
         <i class="far fa-thumbs-up down" data-value=1></i>
       </div>
       <% elsif @question.type_question == "jauge" %>
-      <div class="answer-with-jauge">
-        <p>min</p>
+      <div class="answer-with-jauge d-flex">
+        <i class="fas fa-minus"></i>
         <input type="range" class='range_css'>
-        <p>max</p>
+        <i class="fas fa-plus"></i>
       </div>
       <div class="jauge_number"></div>
       <% elsif @question.type_question == "smileys" %>
@@ -23,7 +23,6 @@
         <i class="far fa-laugh-wink" data-value=4></i>
       </div>
     <%end %>
-
 
 
     <%= simple_form_for([@question,@answer]) do |f| %>
