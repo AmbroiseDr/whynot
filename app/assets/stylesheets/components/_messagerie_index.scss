@@ -73,7 +73,12 @@
   margin: 0;
   padding: 5px;
   font-weight:500;
+}
 
+.text-message-reco {
+  margin: 0;
+  padding: 5px;
+  font-weight:400;
 }
 
 .messages ul {
@@ -107,7 +112,6 @@
   height: auto;
   display: flex;
   color:black;
-
   }
 
 .talk-bubble-sender{
@@ -119,6 +123,25 @@
   align-self:flex-end;
   color:white;
   }
+
+.talk-bubble-reco {
+  margin: 10px;
+  display: inline-block;
+  position: relative;
+  width: 80%;
+  height: auto;
+  align-self:center;
+  display: flex;
+  color:black;
+}
+
+.reco-message{
+  background-color: #88CEFA;
+  border-radius:20px;
+  color: black;
+  padding: 10px;
+  text-align:middle;
+}
 
 .messages img {
   height: 30px;
