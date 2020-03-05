@@ -8,10 +8,11 @@ class MessagesController < ApplicationController
 
   def index
     @messages = current_user.conversation_with(params[:user_id])
+    messages_viewed(@messages, current_user)
+    @messages = current_user.conversation_with(params[:user_id])
     @message  = Message.new
     @friend   = User.find(params[:user_id])
     @reco_info = recos(current_user, @friend)
-
     @chat_room_id = current_user.id * @friend.id
   end
 
@@ -32,6 +33,15 @@ class MessagesController < ApplicationController
 
   def message_params
     params.require(:message).permit(:content)
+  end
+
+  def messages_viewed(messages, user)
+    messages.each do |message|
+      if message.receiver == user
+        message.viewed = true
+        message.save
+      end
+    end
   end
 
   def recos(user, friend)
