@@ -139,6 +139,10 @@ class User < ApplicationRecord
     conversation.sort_by { |message| message.created_at }
   end
 
+  def messages_viewed
+    Message.where(receiver:self, viewed: false).count
+  end
+
   def mbti
     self.profile_mbti.mbti
   end
