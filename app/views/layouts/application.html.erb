@@ -6,6 +6,20 @@
     <title><%= meta_title %></title>
     <meta name="description" content="<%= meta_description %>">
 
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable"  content="yes">
+
+    <link rel="manifest" href=<%= asset_path 'manifest.json' %>>
+
+
+
+    <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
     <!-- Facebook Open Graph data -->
     <meta property="og:title" content="<%= meta_title %>" />
     <meta property="og:type" content="website" />
@@ -13,12 +27,14 @@
     <meta property="og:image" content="<%= meta_image %>" />
     <meta property="og:description" content="<%= meta_description %>" />
     <meta property="og:site_name" content="<%= meta_title %>" />
-
+    <%= favicon_link_tag %>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@7.2.0/dist/css/autoComplete.min.css">
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
+    <link rel="manifest" href="<%= asset_path 'manifest.json' %>">
+    <%= render 'shared/ios_pwa_links' %>
   </head>
   <body>
     <%= render 'shared/flashes' %>

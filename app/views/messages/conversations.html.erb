@@ -13,8 +13,19 @@
           <% end %>
           <div class="card-product-infos">
             <h2><%= user.name %></h2>
-            <p><%= current_user.conversation_with(user.id).last.content %></p>
+            <p class="card-product-messages"><%= current_user.conversation_with(user.id).last.content %></p>
           </div>
+          <% counter = 0 %>
+          <% current_user.conversation_with(user.id).each do |message|%>
+            <% if message.receiver == current_user && message.viewed == false%>
+              <% counter = counter + 1 %>
+            <% end %>
+          <% end %>
+          <% if counter != 0 %>
+            <div class="card-product-counter text-center">
+              <p class="unread-counter"><%= counter %></p>
+            </div>
+          <% end %>
         </div>
       <% end %>
     <% end %>

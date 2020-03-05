@@ -7,6 +7,27 @@
   text-align:center;
 }
 
+.card-product-counter{
+  background-color:rgba(255,14,72,0.8);
+  padding: 10px;
+  border-radius: 50%;
+  font-weight:800;
+  height:40px;
+  width:40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position:absolute;
+  right:20px;
+}
+
+.unread-counter{
+  margin:0;
+  padding:0;
+  color:white;
+  flex: 0 0 40px;
+  font-size:20px;
+}
 
 
 .header-message a {
@@ -27,6 +48,7 @@
 }
 
 .card-product {
+  position:relative;
   overflow: hidden;
   height: 80px;
   background: white;
@@ -56,7 +78,7 @@
 
 }
 
-.card-product p {
+.card-product .card-product-messages {
   color:black;
   font-size: 12px;
   line-height: 1.4;
@@ -73,7 +95,12 @@
   margin: 0;
   padding: 5px;
   font-weight:500;
+}
 
+.text-message-reco {
+  margin: 0;
+  padding: 5px;
+  font-weight:400;
 }
 
 .messages ul {
@@ -107,7 +134,6 @@
   height: auto;
   display: flex;
   color:black;
-
   }
 
 .talk-bubble-sender{
@@ -119,6 +145,41 @@
   align-self:flex-end;
   color:white;
   }
+
+.talk-bubble-reco {
+  margin: 10px;
+  display: inline-block;
+  width: 80%;
+  height: auto;
+  align-self:center;
+  display: flex;
+  color:black;
+}
+
+.talk-bubblle-calendar{
+  display: inline-block;
+  height: auto;
+  align-self:center;
+  background-color:#012A90;
+  padding:10px;
+  border-radius:20px;
+
+  & a {
+    color:white;
+  }
+}
+
+.reco-calendar-btn{
+  text-align:center;
+}
+
+.reco-message{
+  background-color: #88CEFA;
+  border-radius:20px;
+  color: black;
+  padding: 10px;
+  text-align:middle;
+}
 
 .messages img {
   height: 30px;

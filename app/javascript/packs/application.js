@@ -42,3 +42,7 @@ selectMbti();
 
 import { stepsCreate } from '../components/steps_create_user'
 stepsCreate();
+
+import { AnimateJauge } from '../components/jauge';
+AnimateJauge();
+

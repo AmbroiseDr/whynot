@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get 'messages/index'
   get 'messages/create'
   devise_for :users
-  root to: 'matches#index'
+  root to: 'pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   resource :profile, only: [:show, :edit, :update]
@@ -19,6 +19,8 @@ Rails.application.routes.draw do
   resources :users, only: [] do
     resources :messages, only: [:index, :create]
   end
+
+  get 'calendar', to: 'calendars#generate', as: 'calendar'
 
   resources :maps, only: [:index]
 end

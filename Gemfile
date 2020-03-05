@@ -21,6 +21,7 @@ gem 'uglifier'
 gem 'webpacker'
 gem 'geocoder'
 gem 'countupjs-rails'
+gem 'icalendar'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
