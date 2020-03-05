@@ -18,7 +18,7 @@ class MessagesController < ApplicationController
     @chat_room_id = current_user.id * @friend.id
 
     cal = Icalendar::Calendar.new
-    filename = "Foo at #{@friend.name}"
+    filename = "Rencontre avec #{@friend.name}"
 
     if params[:format] == 'vcs'
       cal.prodid = '-//Microsoft Corporation//Outlook MIMEDIR//EN'
@@ -29,12 +29,13 @@ class MessagesController < ApplicationController
       cal.version = '2.0'
       filename += '.ics'
     end
-    @date = DateTime.new(2001,2,3,4,5,6)
-    raise
+    start_time = DateTime.new(2020,3,7,17)
+    end_time =DateTime.new(2020,3,7,18)
+
 
     cal.event do |e|
-      e.dtstart     = Icalendar::Values::DateTime.new(2001,2,3,4,5,6)
-      e.dtend       = Icalendar::Values::DateTime.new(2001,2,3,4,5,6)
+      e.dtstart     = Icalendar::Values::DateTime.new(start_time)
+      e.dtend       = Icalendar::Values::DateTime.new(end_time)
       e.summary     = "foo summary"
       e.description = "foo.description"
       e.url         = "event_url(foo)"
