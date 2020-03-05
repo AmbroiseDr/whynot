@@ -1,6 +1,7 @@
 require 'json'
 require 'open-uri'
 
+
 class MessagesController < ApplicationController
   def conversations
     @users_with_conversation = current_user.friends
@@ -69,6 +70,8 @@ class MessagesController < ApplicationController
             to_add["name"] = marker["name"]
             to_add["rating"] = marker["rating"]
             to_add["type"] = translation[tag][1]
+            to_add["calendar_type"]=translation[tag][0]
+            to_add["address"] = marker["vicinity"]
             markers.push(to_add)
           end
         end

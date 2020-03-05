@@ -149,12 +149,28 @@
 .talk-bubble-reco {
   margin: 10px;
   display: inline-block;
-  position: relative;
   width: 80%;
   height: auto;
   align-self:center;
   display: flex;
   color:black;
+}
+
+.talk-bubblle-calendar{
+  display: inline-block;
+  height: auto;
+  align-self:center;
+  background-color:#012A90;
+  padding:10px;
+  border-radius:20px;
+
+  & a {
+    color:white;
+  }
+}
+
+.reco-calendar-btn{
+  text-align:center;
 }
 
 .reco-message{
