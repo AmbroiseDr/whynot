@@ -15,5 +15,9 @@
       <% else %>
         <% percentage = "15" %>
       <% end %>
+      <% unless current_user.answered? %>
+        <% percentage = percentage.to_i  %>
+        <% percentage -= 10 %>
+      <% end %>
     <h4 class="percentage-matches-animation text-pink"><%= percentage %></h4><span class="text-pink">%<span>
 </div>

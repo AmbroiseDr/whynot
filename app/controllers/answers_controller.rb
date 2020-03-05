@@ -5,10 +5,12 @@ class AnswersController < ApplicationController
     @answer.question = @question
     @answer.user = current_user
     if @answer.save
+      current_user.answered!
       if current_user.answers.size % 4 != 0
         normalize_answers
         redirect_to question_path(current_user.questions_not_answered.sample)
       else
+        current_user.save
         find_user_answers
         scoring_question
         scoring_answer
