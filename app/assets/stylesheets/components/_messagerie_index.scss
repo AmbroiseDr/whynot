@@ -7,6 +7,27 @@
   text-align:center;
 }
 
+.card-product-counter{
+  background-color:rgba(255,14,72,0.8);
+  padding: 10px;
+  border-radius: 50%;
+  font-weight:800;
+  height:40px;
+  width:40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position:absolute;
+  right:20px;
+}
+
+.unread-counter{
+  margin:0;
+  padding:0;
+  color:white;
+  flex: 0 0 40px;
+  font-size:20px;
+}
 
 
 .header-message a {
@@ -27,6 +48,7 @@
 }
 
 .card-product {
+  position:relative;
   overflow: hidden;
   height: 80px;
   background: white;
@@ -56,7 +78,7 @@
 
 }
 
-.card-product p {
+.card-product .card-product-messages {
   color:black;
   font-size: 12px;
   line-height: 1.4;
