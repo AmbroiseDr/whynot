@@ -1,0 +1,28 @@
+
+<div id="user_id" data-userid="<%= params[:user_id] %>"></div>
+
+<% content_for :after_js do %>
+  <script>
+    console.log('hello notification');
+
+    App['notification_<%= current_user.id %>'] = App.cable.subscriptions.create(
+      { channel: 'NotificationChannel', user_id: <%= current_user.id %> },
+      {
+        received: (data) => {
+
+          let userId = document.getElementById('user_id').dataset.userid;
+
+          if (userId) userId = parseInt(userId);
+
+          if(userId !== data.sender_id) {
+            document.getElementById('footbar_bubble').innerHTML = `
+              <i class="fas fa-comment"></i>
+              <span class="badge text-white bg-dark">!</span>
+            `;
+          }
+
+        }
+      }
+    );
+  </script>
+<% end %>

@@ -8,6 +8,8 @@ class MessagesController < ApplicationController
   end
 
   def index
+    @user_id = params[:user_id]
+    @messages_index = true;
     @messages = current_user.conversation_with(params[:user_id])
     messages_viewed(@messages, current_user)
     @messages = current_user.conversation_with(params[:user_id])

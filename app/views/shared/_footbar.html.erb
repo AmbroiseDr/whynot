@@ -8,7 +8,12 @@
     <%= link_to maps_path, class:"footbar-btn #{"active" if params[:controller] == 'maps'}" do %>
       <i class="fas fa-map-marker-alt"></i>
     <% end %>
-    <%= link_to messages_conversations_path, class:"footbar-btn #{"active" if params[:controller] == 'messages'}" do %>
+    <%= link_to messages_conversations_path, id: "footbar_bubble", class: "footbar-btn position-relative #{"active" if params[:controller] == 'messages'}" do %>
       <i class="fas fa-comment"></i>
+
+      <% if current_user.messages_unviewed > 1 %>
+        <span class="badge text-white bg-dark">!</span>
+      <% end %>
     <% end %>
 </div>
+
