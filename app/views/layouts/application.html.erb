@@ -42,11 +42,16 @@
       <%= yield %>
     </div>
     <%= render 'shared/footbar' %>
+    <%= render 'shared/notification' if user_signed_in? %>
+
     <%= javascript_include_tag 'application' %>
     <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?libraries=places&key=#{ENV['GOOGLE_API_BROWSER_KEY']}" %>
     <%= javascript_pack_tag 'application' %>
     <%= javascript_pack_tag "map" %>
     <script src="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@7.2.0/dist/js/autoComplete.min.js"></script>
     <%= yield :after_js %>
+
+
+
   </body>
 </html>
