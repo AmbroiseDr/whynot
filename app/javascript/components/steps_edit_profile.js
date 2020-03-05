@@ -26,8 +26,10 @@ const adaptCardSize = (counter) => {
 
 
 const stepsEdit = () => {
-  const steps = document.querySelectorAll(".step")
-  if (steps.length != 0){
+  const card = document.querySelector('.card-edit');
+
+  if (card){
+    const steps = document.querySelectorAll(".step")
     const progPoints = document.querySelectorAll(".prog")
 
     const precedent = document.getElementById('precedent')
