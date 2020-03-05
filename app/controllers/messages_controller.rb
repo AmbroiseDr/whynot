@@ -1,7 +1,6 @@
 require 'json'
 require 'open-uri'
-require 'icalendar'
-require 'date'
+
 
 class MessagesController < ApplicationController
   def conversations
@@ -16,33 +15,6 @@ class MessagesController < ApplicationController
     @friend   = User.find(params[:user_id])
     @reco_info = recos(current_user, @friend)
     @chat_room_id = current_user.id * @friend.id
-
-    cal = Icalendar::Calendar.new
-    filename = "Rencontre avec #{@friend.name}"
-
-    if params[:format] == 'vcs'
-      cal.prodid = '-//Microsoft Corporation//Outlook MIMEDIR//EN'
-      cal.version = '1.0'
-      filename += '.vcs'
-    else # ical
-      cal.prodid = '-//Acme Widgets, Inc.//NONSGML ExportToCalendar//EN'
-      cal.version = '2.0'
-      filename += '.ics'
-    end
-    start_time = DateTime.new(2020,3,7,17)
-    end_time =DateTime.new(2020,3,7,18)
-
-
-    cal.event do |e|
-      e.dtstart     = Icalendar::Values::DateTime.new(start_time)
-      e.dtend       = Icalendar::Values::DateTime.new(end_time)
-      e.summary     = "foo summary"
-      e.description = "foo.description"
-      e.url         = "event_url(foo)"
-      e.location    = "foo.formatted_address"
-    end
-
-    send_data cal.to_ical, type: 'text/calendar', disposition: 'attachment', filename: filename
   end
 
   def create
@@ -98,6 +70,8 @@ class MessagesController < ApplicationController
             to_add["name"] = marker["name"]
             to_add["rating"] = marker["rating"]
             to_add["type"] = translation[tag][1]
+            to_add["calendar_type"]=translation[tag][0]
+            to_add["address"] = marker["vicinity"]
             markers.push(to_add)
           end
         end

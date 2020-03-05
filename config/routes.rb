@@ -20,5 +20,7 @@ Rails.application.routes.draw do
     resources :messages, only: [:index, :create]
   end
 
+  get 'calendar', to: 'calendars#generate', as: 'calendar'
+
   resources :maps, only: [:index]
 end
