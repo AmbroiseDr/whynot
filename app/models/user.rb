@@ -19,7 +19,7 @@ class User < ApplicationRecord
     'walk'    =>  'Promenade',
     'cofee'   => 'Café',
     'game'    => 'Bar à jeux',
-    'escape'  => 'Escape game',
+    'escapes'  => 'Escape game',
 
   }
 
@@ -31,7 +31,7 @@ class User < ApplicationRecord
     'walk'    =>  'fa-tree',
     'cofee'   => 'fa-coffee',
     'game'    => 'fa-chess-knight',
-    'escape'  => 'fa-search',
+    'escapes'  => 'fa-search',
   }
 
   attr_accessor :form_tag_list

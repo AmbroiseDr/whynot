@@ -11,7 +11,7 @@ const mapElement = document.getElementById('map');
 if (mapElement) { // don't try to build a map if there's no div#map to inject in
   const oldMarkers = mapElement.dataset.markers
   // const map = new GMaps({ el: '#map', lat: 0, lng: 0 });
-  const map = new google.maps.Map(document.getElementById('map'), {center : {lat: 48.8522428, lng: 2.3393369}, zoom: 13});
+  const map = new google.maps.Map(document.getElementById('map'), {center : {lat: 48.8522428, lng: 2.3393369}, zoom: 15});
   const markers = JSON.parse(oldMarkers);
   const userMarker = new google.maps.Marker({position: {lat: 48.8522428,lng: 2.3393369},
     map: map,
@@ -22,20 +22,38 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
 
 
   markers.forEach((marker) => {
-    let infowindow = new google.maps.InfoWindow({
-      content: `
-        <h3>${marker.name}</h3>
-        <h4>${marker.rating}/5</h4>
-        <a href="/matches/15">Profile</a>
-      `
-    });
-    window.setTimeout(function() {
-      const newMarker = new google.maps.Marker({position: marker, map: map, title: "test",animation: google.maps.Animation.DROP});
-      newMarker.addListener('click', function() {
-          infowindow.open(map, newMarker);
+    if (marker.users_match.length != 0) {
+      let stars = "";
+      for (let i = 0; i < 5; i++) {
+        if ( i < marker.rating ){
+          stars = stars + "⭐️";
+        };
+      }
+      let content_info = `
+          <p class= "place_name">${marker.name}</p>
+          <p class= "place_type">${marker.type}</p>
+          <p class= "place_rating" >${stars}</p>
+          <p>Est aussi intéressé pas cet endroit: </p>
+          <div class="places_photos">`
+      marker.users_match.forEach((match) => {
+        let to_add_html = `
+        <a href="/matches/${match.user_id}"><img src="http://res.cloudinary.com/duv3g4cfp/image/upload/c_thumb/${match.user_photo_key}"></a>
+        `
+          content_info = content_info + to_add_html
       });
-    }, counter * 200);
-    counter = counter + 1;
+      content_info = content_info + "</div>"
+      console.log(marker.users_match)
+      let infowindow = new google.maps.InfoWindow({
+        content: content_info
+      });
+      window.setTimeout(function() {
+        const newMarker = new google.maps.Marker({position: marker, map: map, title: "test",animation: google.maps.Animation.DROP});
+        newMarker.addListener('click', function() {
+            infowindow.open(map, newMarker);
+        });
+      },counter * 200);
+      counter = counter + 1;
+    };
   })
 }
 
