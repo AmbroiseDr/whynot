@@ -1,8 +1,18 @@
 <div class="header-message">
   <%= link_to '<', conversations_path %>
   <span class="conv-name"><%= @friend.name %></span> </div>
+  <% if @friend.photo.attached? %>
+    <%= cl_image_tag @friend.photo.key, crop: :thumb, class: "avatar-friend d-none" %>
+  <% end %>
 <div class="messages">
   <ul>
+    <% unless @reco_info.empty? %>
+      <div class="talk-bubble-reco">
+        <li class= "reco-message"><p class ="text-message-reco">Bonjour <%= @current_user.name %> et <%= @friend.name %>,
+          bienvenue dans ce qui s'annonce être une merveilleuse aventure 🍾! Vous aimez tous les deux <%= @reco_info["type"] %> !
+          Pourquoi ne pas essayer <strong><%= @reco_info["name"] %></strong> samedi prochain ? Il est plutôt bien noté ! <%= @reco_info["rating"] %>/5 !</p></li>
+      </div>
+    <% end %>
     <% @messages.each do |message| %>
       <% if @friend.name == message.sender.name %>
         <div class="talk-bubble-receiver">
