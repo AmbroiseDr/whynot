@@ -33,7 +33,8 @@ Question.create(content: "Je préfère parler par message pour ne pas subir l'ha
 Question.create(content: "Lorsque je visite une ville, je m'oriente les yeux fermés", type_question:"jauge", letter_position: 2)
 Question.create(content: "Aucune fake news ne peut m'avoir", type_question:"pouce", letter_position: 2)
 Question.create(content: "Je dis minimum 2 fois par jour 't'inquiète'", type_question:"pouce", letter_position: 3)
-Question.create(content: "Vous savez, moi je ne crois pas qu'il y ait de bonne ou de mauvaise situation. Moi, si je devais résumer ma vie aujourd'hui avec vous, je dirais que c'est d'abord des rencontres", type_question:"smileys", letter_position: 3)
+Question.create(content: "Vous savez, moi je ne crois pas qu’il y ait de bonne ou de mauvaise situation. Moi, si je devais résumer ma vie aujourd’hui avec vous, je dirais que c’est d’abord des rencontres...", type_question:"smileys", letter_position: 3)
+
 Question.create(content: "Je fais le ménage seulement quand la situation devient mortelle", type_question:"pouce", letter_position: 4)
 Question.create(content: "Une semaine sans voir des amis, c'est possible ?", type_question:"jauge", letter_position: 4)
 puts "Questions created"
