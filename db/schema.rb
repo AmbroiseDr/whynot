@@ -124,7 +124,6 @@ ActiveRecord::Schema.define(version: 2020_03_04_105952) do
     t.datetime "updated_at", null: false
     t.string "name"
     t.string "job"
-    t.integer "age"
     t.integer "letter_adjustement_first"
     t.integer "letter_adjustement_second"
     t.integer "letter_adjustement_third"
@@ -138,6 +137,7 @@ ActiveRecord::Schema.define(version: 2020_03_04_105952) do
     t.string "movie_image_url"
     t.string "description"
     t.boolean "answered", default: false
+    t.integer "age"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["profile_mbti_id"], name: "index_users_on_profile_mbti_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

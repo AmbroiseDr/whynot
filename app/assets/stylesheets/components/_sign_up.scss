@@ -1,0 +1,49 @@
+.sign-up{
+  margin: 25px 10px;
+}
+
+.form-inputs input{
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
+  height: 40px;
+  border: 1px solid rgba(255,14,72, 0.5);
+  width: 250px;
+}
+
+.form-inputs input[type=checkbox]{
+  width:0px;
+}
+
+.form-inputs label{
+  margin-top: 13px;
+}
+
+
+.mbti-selection{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+}
+
+.mbti-letters{
+  padding: 0 10px;
+  color: #FF0E48;
+  width: 60px;
+  height: 60px;
+  border: 2px solid #FF0E48;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.mbti-letters.active{
+  background-color: #FF0E48;
+  color: white;
+}
+
+.link a{
+  text-decoration: underline rgba(255,14,72, 0.5);
+  color: rgba(255,14,72, 0.5);
+}

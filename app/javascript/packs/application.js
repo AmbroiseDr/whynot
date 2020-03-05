@@ -37,3 +37,8 @@ selectSmileyAnswer();
 import { selectLike } from '../components/like_question';
 selectLike();
 
+import { selectMbti } from '../components/selectMbti';
+selectMbti();
+
+import { stepsCreate } from '../components/steps_create_user'
+stepsCreate();
