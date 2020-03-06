@@ -11,12 +11,16 @@
   width: 250px;
 }
 
-.form-inputs input[type=checkbox]{
-  width:13px;
+
+#user_age {
+  width: 105px;
+  margin-top: 15px;
 }
 
-.form-inputs label{
-  margin-top: 13px;
+
+
+.form-inputs input[type=checkbox]{
+  width:13px;
 }
 
 
@@ -46,4 +50,11 @@
 .link a{
   text-decoration: underline rgba(255,14,72, 0.5);
   color: rgba(255,14,72, 0.5);
+}
+
+#choix-photo{
+  height: 40px;
+  padding: 5px;
+  width : 105px;
+  margin: 0px;
 }

@@ -43,21 +43,20 @@
         <hr class="ml-3 mr-3 mt-1 mb-1">
       </div>
       <div class="user-preferences">
-        <div class="pref pr-3 pl-4 mt-2">
-          <% if user.job.nil? %>
+        <div class="pref pr-3 pl-4 pt-2 d-flex align-items-center">
+          <% if current_user.job.nil? %>
             <% else %>
             <i class="fas fa-suitcase"></i>
-            <p class="ml-3"><%=user.job%></p>
+            <p class="ml-3 mb-0"><%=current_user.job%></p>
           <% end %>
         </div>
-        <div class="pref pr-3 pl-4 mt-2">
-          <% if user.movie_title.nil? %>
+        <div class="pref pr-3 pl-4 mt-1 d-flex align-items-center">
+          <% if current_user.movie_title.nil? %>
             <% else %>
             <i class="fas fa-video"></i>
-            <p class="ml-3"><%= user.movie_title %></p>
+            <p class="ml-3 mb-0"><%= current_user.movie_title %></p>
             <% end %>
         </div>
-      </div>
       <% if user.tag_list.nil? %>
         <% else %>
         <div class="cards-activities ml-5 mr-5 mt-3">

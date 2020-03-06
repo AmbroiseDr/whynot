@@ -33,7 +33,7 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
           <p class= "place_name">${marker.name}</p>
           <p class= "place_type">${marker.type}</p>
           <p class= "place_rating" >${stars}</p>
-          <p>Est aussi intéressé pas cet endroit: </p>
+          <p>Est aussi intéressé par cet endroit: </p>
           <div class="places_photos">`
       marker.users_match.forEach((match) => {
         let to_add_html = `
